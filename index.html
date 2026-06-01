@@ -1,345 +1,868 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Azza Fadhel — PhD Candidate in Computer Science at Washington State University. AI/ML researcher working on data-efficient optimization, scientific discovery, and AI engineering." />
-  <meta name="author" content="Azza Fadhel" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azza Fadhel | Ph.D. Candidate in Computer Science</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ╔══════════════════════════════════════════════════════════╗
+   ║  HOW TO EDIT THIS FILE                                   ║
+   ║                                                          ║
+   ║  PHOTO  →  Find <!-- <img src="YOUR_PHOTO.jpg">          ║
+   ║             Remove <!-- and --> then set src="photo.jpg" ║
+   ║                                                          ║
+   ║  LINKS  →  Search href= and update each URL              ║
+   ║  CV FILE→  Search "azza_fadhel_cv.pdf" (2 places)        ║
+   ║                                                          ║
+   ║  ADD PROOF PHOTO anywhere:                               ║
+   ║    inside any .proof-row paste:                          ║
+   ║    <img src="FILE.jpg" class="proof-img-thumb"           ║
+   ║         onclick="openLightbox(this.src)">                ║
+   ║                                                          ║
+   ║  ADD PROOF LINK anywhere:                                ║
+   ║    <a href="URL" class="proof-link">🔗 Label</a>         ║
+   ║                                                          ║
+   ║  ADD PUBLICATION → copy a .pub-item block                ║
+   ║  ADD AWARD       → copy an .award-item block             ║
+   ║  ADD CERT        → copy a .cert-item block               ║
+   ║  ADD PROJECT     → copy a .project-item block            ║
+   ╚══════════════════════════════════════════════════════════╝ */
 
-  <meta property="og:title" content="Azza Fadhel | AI/ML Researcher" />
-  <meta property="og:description" content="AI/ML researcher in data-efficient optimization, scientific discovery, and engineering design." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/profile-placeholder.svg" />
+:root {
+  --bg:#0f0d14; --surface:#1a1625; --surface2:#211c2f;
+  --border:rgba(200,160,220,0.12);
+  --accent:#c084fc; --accent2:#f0abfc; --accent3:#a78bfa;
+  --text:#e8dff5; --muted:#9d8fba; --gold:#e9c46a; --green:#6ee7b7;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 20% 0%,rgba(192,132,252,.08) 0%,transparent 60%),
+             radial-gradient(ellipse 60% 50% at 80% 100%,rgba(167,139,250,.06) 0%,transparent 60%);
+  pointer-events:none;z-index:0;}
 
-  <title>Azza Fadhel | AI/ML Researcher</title>
-  <link rel="stylesheet" href="style.css" />
+/* ══ NAV ══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1rem 1.6rem;padding:.8rem 2rem;background:rgba(15,13,20,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+nav a{color:var(--muted);text-decoration:none;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;transition:color .2s;white-space:nowrap;}
+nav a:hover,nav a.active{color:var(--accent2);}
+.nav-cv{color:var(--accent2)!important;border:1px solid rgba(192,132,252,.35);padding:.22rem .8rem;border-radius:999px;}
+.nav-cv:hover{background:rgba(192,132,252,.12);border-color:var(--accent)!important;}
+
+/* ══ HERO ══ */
+.hero{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;padding:7rem 2rem 5rem;max-width:1100px;margin:0 auto;gap:4rem;}
+
+/* PHOTO — to add your image:
+   1. Put photo.jpg in the same folder as index.html
+   2. Find the img tag below and remove the comment markers */
+.hero-photo{flex-shrink:0;width:200px;height:200px;border-radius:50%;overflow:hidden;border:2px solid var(--accent);box-shadow:0 0 40px rgba(192,132,252,.25),0 0 80px rgba(192,132,252,.08);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:5rem;}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+
+.hero-text h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5vw,4.2rem);font-weight:300;letter-spacing:-.01em;line-height:1.1;margin-bottom:.4rem;}
+.hero-text h1 em{font-style:italic;color:var(--accent2);}
+.hero-subtitle{font-size:.9rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.2rem;font-weight:400;}
+.hero-location{font-size:.8rem;color:var(--muted);margin-bottom:.9rem;}
+.hero-links{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.6rem;}
+.hero-links a{display:flex;align-items:center;justify-content:center;width:2.3rem;height:2.3rem;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--accent);text-decoration:none;transition:all .2s;}
+.hero-links a:hover{border-color:var(--accent);background:rgba(192,132,252,.1);transform:translateY(-2px);}
+.cv-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.48rem 1.2rem;border-radius:999px;background:linear-gradient(135deg,rgba(192,132,252,.15),rgba(167,139,250,.1));border:1px solid rgba(192,132,252,.35);color:var(--accent2);text-decoration:none;font-size:.77rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;transition:all .2s;}
+.cv-btn:hover{background:rgba(192,132,252,.2);border-color:var(--accent);transform:translateY(-1px);box-shadow:0 4px 20px rgba(192,132,252,.18);}
+.update-badge{font-size:.7rem;color:var(--muted);font-style:italic;display:block;margin-top:.5rem;}
+
+/* ══ PAGE ══ */
+.page{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 2rem 5rem;display:flex;flex-direction:column;gap:2rem;}
+
+/* ══ ABOUT + EDUCATION ROW (side by side) ══ */
+.about-edu-row{display:grid;grid-template-columns:1fr 340px;gap:2rem;align-items:start;}
+
+/* ══ CARDS ══ */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:border-color .2s;}
+.card:hover{border-color:rgba(192,132,252,.22);}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--text);margin-bottom:1.2rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.5rem;}
+.card-title::before{content:'';display:inline-block;width:3px;height:1.1em;background:linear-gradient(to bottom,var(--accent),var(--accent3));border-radius:2px;}
+
+/* ══ ABOUT ══ */
+.about-text p{color:var(--text);margin-bottom:1rem;font-size:.92rem;}
+.about-text p:last-child{margin-bottom:0;}
+.about-text a{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(192,132,252,.3);text-underline-offset:3px;transition:color .2s;}
+.about-text a:hover{color:var(--accent2);}
+.section-sub{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);font-weight:500;margin:1.3rem 0 .55rem;padding-bottom:.3rem;border-bottom:1px solid var(--border);}
+.research-list{list-style:none;margin-top:.3rem;}
+.research-list li{padding:.28rem 0 .28rem 1.2rem;position:relative;font-size:.87rem;color:var(--text);}
+.research-list li::before{content:'◆';position:absolute;left:0;color:var(--accent);font-size:.44rem;top:.65rem;}
+
+/* ══ EDUCATION (sidebar style) ══ */
+.edu-entry{padding:1rem 0;border-bottom:1px solid var(--border);}
+.edu-entry:last-child{border-bottom:none;padding-bottom:0;}
+.edu-entry:first-child{padding-top:0;}
+.edu-header{display:flex;align-items:flex-start;justify-content:space-between;gap:.4rem;margin-bottom:.15rem;}
+.edu-years{font-size:.72rem;color:var(--accent3);white-space:nowrap;padding-top:.15rem;}
+.edu-degree-name{font-weight:500;font-size:.88rem;color:var(--text);line-height:1.3;}
+.edu-institution{font-size:.79rem;color:var(--muted);margin:.12rem 0 .04rem;}
+.edu-location{font-size:.72rem;color:var(--muted);font-style:italic;}
+.edu-detail{font-size:.74rem;color:var(--muted);margin-top:.18rem;line-height:1.5;}
+.edu-detail strong{color:var(--accent3);font-weight:500;}
+.edu-gpa{display:inline-block;margin-top:.28rem;font-size:.7rem;padding:.12rem .55rem;border-radius:999px;background:rgba(192,132,252,.1);border:1px solid rgba(192,132,252,.2);color:var(--accent2);}
+
+/* ══ PROOF ATTACHMENTS ══ */
+.proof-row{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.55rem;}
+.proof-link{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;padding:.18rem .6rem;border-radius:6px;background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.2);color:var(--accent2);text-decoration:none;transition:all .2s;}
+.proof-link:hover{background:rgba(192,132,252,.18);border-color:var(--accent);}
+.proof-img-thumb{width:64px;height:64px;border-radius:8px;object-fit:cover;border:1px solid var(--border);cursor:pointer;transition:transform .2s,border-color .2s;}
+.proof-img-thumb:hover{transform:scale(1.06);border-color:var(--accent);}
+
+/* ══ LIGHTBOX ══ */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:999;align-items:center;justify-content:center;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:90vw;max-height:90vh;border-radius:12px;}
+.lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:2rem;color:var(--muted);cursor:pointer;line-height:1;}
+.lightbox-close:hover{color:var(--text);}
+
+/* ══ PROJECTS ══ */
+.project-item{display:grid;grid-template-columns:200px 1fr;gap:1.4rem;padding:1.4rem 0;border-bottom:1px solid var(--border);}
+.project-item:last-child{border-bottom:none;padding-bottom:0;}
+.project-item:first-child{padding-top:0;}
+.project-img{border-radius:10px;overflow:hidden;background:var(--surface2);border:1px solid var(--border);}
+.project-img-placeholder{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--surface2) 0%,rgba(192,132,252,.1) 100%);font-size:2.5rem;}
+/* To add a real project image, replace the placeholder div with:
+   <img src="project.jpg" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;"> */
+.project-tag{display:inline-block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .55rem;border-radius:999px;background:rgba(192,132,252,.12);border:1px solid rgba(192,132,252,.2);color:var(--accent2);margin-bottom:.5rem;}
+.project-title{font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--text);margin-bottom:.4rem;line-height:1.3;}
+.project-desc{font-size:.83rem;color:var(--muted);line-height:1.7;}
+.project-desc a{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(192,132,252,.3);text-underline-offset:3px;transition:color .2s;}
+.project-desc a:hover{color:var(--accent2);}
+
+/* ══ PUBLICATIONS ══ */
+.pub-item{padding:.85rem 0;border-bottom:1px solid var(--border);display:flex;gap:.6rem;}
+.pub-item:last-child{border-bottom:none;padding-bottom:0;}
+.pub-item:first-child{padding-top:0;}
+.pub-icon{flex-shrink:0;font-size:.8rem;margin-top:.15rem;color:var(--accent);}
+.pub-title{font-size:.88rem;color:var(--accent);text-decoration:underline;text-decoration-color:rgba(192,132,252,.3);text-underline-offset:3px;display:block;margin-bottom:.12rem;font-weight:400;transition:color .2s;line-height:1.4;}
+.pub-title:hover{color:var(--accent2);}
+.pub-authors{font-size:.76rem;color:var(--muted);margin-bottom:.08rem;}
+.pub-authors strong{color:var(--accent2);font-weight:500;}
+.pub-venue{font-size:.74rem;color:var(--muted);font-style:italic;}
+
+/* ══ SKILLS ══ */
+.skills-2col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.skill-group-title{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);font-weight:500;margin-bottom:.45rem;}
+.skills-grid{display:flex;flex-wrap:wrap;gap:.38rem;margin-bottom:1.1rem;}
+.skill-pill{font-size:.71rem;padding:.2rem .6rem;border-radius:999px;border:1px solid var(--border);background:var(--surface2);color:var(--muted);}
+
+/* ══ NEWS ══ */
+.news-item{padding:.85rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:110px 1fr;gap:1rem;}
+.news-item:last-child{border-bottom:none;}
+.news-date{font-size:.79rem;color:var(--accent);font-weight:500;padding-top:.1rem;}
+.news-text{font-size:.86rem;color:var(--text);}
+.news-text ul{margin-top:.35rem;padding-left:1.1rem;}
+.news-text li{margin-bottom:.2rem;color:var(--muted);font-size:.82rem;}
+
+/* ══ AWARDS ══ */
+.award-item{padding:.82rem 0;border-bottom:1px solid var(--border);}
+.award-item:last-child{border-bottom:none;}
+.award-row{display:flex;align-items:flex-start;gap:.6rem;}
+.award-icon{color:var(--gold);font-size:.92rem;flex-shrink:0;margin-top:.1rem;}
+.award-name{font-size:.87rem;font-weight:500;color:var(--text);line-height:1.4;}
+.award-org{font-size:.76rem;color:var(--muted);font-style:italic;}
+.award-year{margin-left:auto;font-size:.76rem;color:var(--muted);flex-shrink:0;padding-left:.5rem;white-space:nowrap;}
+
+/* ══ EXPERIENCE (tabbed) ══ */
+.exp-tab-btns{display:flex;gap:.5rem;margin-bottom:1.4rem;flex-wrap:wrap;}
+.exp-tab-btn{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.33rem .95rem;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.exp-tab-btn.active{background:rgba(192,132,252,.15);border-color:rgba(192,132,252,.4);color:var(--accent2);}
+.exp-tab-btn:hover:not(.active){border-color:rgba(192,132,252,.25);color:var(--text);}
+.exp-panel{display:none;}
+.exp-panel.active{display:block;}
+.exp-item{padding:1.05rem 0;border-bottom:1px dashed var(--border);}
+.exp-item:last-child{border-bottom:none;padding-bottom:0;}
+.exp-item:first-child{padding-top:0;}
+.exp-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:.45rem;}
+.exp-dot.teach{background:var(--accent2);}
+.exp-title{font-weight:500;font-size:.91rem;color:var(--text);}
+.exp-date{font-size:.78rem;color:var(--accent3);margin-left:.3rem;font-weight:300;}
+.exp-org{font-size:.8rem;color:var(--muted);margin:.1rem 0 .35rem 1.2rem;}
+.exp-desc{font-size:.85rem;color:var(--text);margin-left:1.2rem;margin-bottom:.3rem;}
+.course-list{margin-left:1.2rem;list-style:none;margin-top:.38rem;}
+.course-item{font-size:.8rem;color:var(--muted);display:flex;align-items:baseline;gap:.4rem;padding:.16rem 0;}
+.course-icon{color:var(--accent3);font-size:.7rem;}
+.course-code{color:var(--text);font-weight:500;}
+.course-seasons{color:var(--accent2);font-size:.76rem;}
+
+/* ══ CERTIFICATIONS ══ */
+.cert-item{padding:.85rem 0;border-bottom:1px solid var(--border);}
+.cert-item:last-child{border-bottom:none;}
+.cert-row{display:flex;align-items:flex-start;gap:.6rem;}
+.cert-icon{color:var(--green);font-size:.92rem;flex-shrink:0;margin-top:.1rem;}
+.cert-name{font-size:.87rem;font-weight:500;color:var(--text);}
+.cert-issuer{font-size:.76rem;color:var(--muted);font-style:italic;}
+.cert-year{margin-left:auto;font-size:.76rem;color:var(--muted);flex-shrink:0;padding-left:.5rem;white-space:nowrap;}
+
+/* ══ SERVICE ══ */
+.service-section{margin-bottom:1.1rem;}
+.service-section:last-child{margin-bottom:0;}
+.service-subtitle{font-size:.71rem;letter-spacing:.11em;text-transform:uppercase;color:var(--accent2);font-weight:500;margin-bottom:.5rem;}
+.service-list{list-style:none;counter-reset:svc;}
+.service-list li{font-size:.83rem;color:var(--text);padding:.2rem 0;display:flex;gap:.38rem;}
+.service-list li::before{counter-increment:svc;content:counter(svc)'.';color:var(--muted);font-size:.76rem;min-width:1.3rem;}
+.service-list li span{color:var(--accent);margin-left:.2rem;}
+
+/* ══ CONTACT ══ */
+.contact-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;transition:border-color .2s;}
+.contact-card:hover{border-color:rgba(192,132,252,.3);}
+.contact-label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:.45rem;}
+.contact-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--text);line-height:1.1;margin-bottom:.6rem;}
+.contact-sub{font-size:.85rem;color:var(--muted);max-width:480px;line-height:1.6;}
+.contact-btns{display:flex;gap:.8rem;flex-shrink:0;flex-wrap:wrap;}
+.contact-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.62rem 1.35rem;border-radius:999px;font-size:.82rem;font-weight:500;text-decoration:none;transition:all .2s;white-space:nowrap;font-family:'DM Sans',sans-serif;}
+.contact-btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent3));color:#0f0d14;}
+.contact-btn-primary:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 6px 24px rgba(192,132,252,.35);}
+.contact-btn-secondary{background:var(--surface2);border:1px solid var(--border);color:var(--text);}
+.contact-btn-secondary:hover{border-color:rgba(192,132,252,.35);color:var(--accent2);transform:translateY(-1px);}
+
+/* ══ FOOTER ══ */
+footer{position:relative;z-index:1;text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);color:var(--muted);font-size:.75rem;font-style:italic;}
+
+/* ══ ANIMATIONS ══ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.hero{animation:fadeUp .8s ease both;}
+.card,.contact-card{animation:fadeUp .6s ease both;}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:800px){
+  .about-edu-row{grid-template-columns:1fr;}
+  .project-item{grid-template-columns:1fr;}
+  .skills-2col{grid-template-columns:1fr;}
+  .contact-card{flex-direction:column;align-items:flex-start;}
+  .hero{flex-direction:column;padding-top:6rem;gap:2rem;}
+  nav{gap:.7rem 1rem;padding:.75rem 1rem;}
+  .page,.hero{padding-left:1.2rem;padding-right:1.2rem;}
+}
+</style>
 </head>
-
 <body>
-  <div class="noise" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Azza Fadhel homepage">
-        <span class="brand-mark">AF</span>
-        <span>Azza Fadhel</span>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- ════════════ NAV ════════════ -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#projects">Projects</a>
+  <a href="#publications">Publications</a>
+  <a href="#skills">Skills</a>
+  <a href="#news">News</a>
+  <a href="#awards">Awards</a>
+  <a href="#research-exp">Research Exp.</a>
+  <a href="#teaching-exp">Teaching Exp.</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#service">Service</a>
+  <a href="#contact">Contact</a>
+  <a href="azza_fadhel_cv.pdf" download class="nav-cv">↓ CV</a>
+</nav>
+
+<!-- ════════════ HERO ════════════ -->
+<header class="hero">
+
+  <!-- ┌─────────────────────────────────────────┐
+       │  YOUR PHOTO                             │
+       │  Step 1: Put your photo file next to    │
+       │          index.html (e.g. photo.jpg)    │
+       │  Step 2: Delete the two comment lines   │
+       │          (the ones with <!-- and -->)   │
+       │          around the <img> tag below     │
+       └─────────────────────────────────────────┘ -->
+  <div class="hero-photo">
+    <!-- <img src="YOUR_PHOTO.jpg" alt="Azza Fadhel"> -->
+    🌸
+  </div>
+
+  <div class="hero-text">
+    <div class="hero-subtitle">Ph.D. Candidate in Computer Science</div>
+    <h1>Azza <em>Fadhel</em></h1>
+    <div class="hero-location">Washington State University · Pullman, WA, USA &nbsp;·&nbsp; azza.fadhel@wsu.edu</div>
+
+    <div class="hero-links">
+      <!-- Update each href to your real URL -->
+      <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME" target="_blank" title="LinkedIn">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
       </a>
-
-      <button class="mobile-menu-button" aria-label="Open navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#experience">Experience</a>
-        <a href="#awards">Awards</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-cv" href="assets/cv.pdf" target="_blank" rel="noopener">CV</a>
-      </nav>
+      <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" title="GitHub">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" title="Google Scholar">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+      </a>
+      <a href="https://www.researchgate.net/profile/YOUR_RG_PROFILE" target="_blank" title="ResearchGate">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><text x="4.5" y="16.5" font-size="8.5" fill="currentColor" stroke="none" font-weight="bold">RG</text></svg>
+      </a>
+      <a href="mailto:azza.fadhel@wsu.edu" title="Email">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" stroke="var(--bg)" stroke-width="1.5" fill="none"/></svg>
+      </a>
     </div>
-  </header>
 
-  <main id="top">
-    <section class="hero-section">
-      <div class="container hero">
-        <div class="hero-copy">
-          <div class="eyebrow">
-            <span class="status-dot"></span>
-            AI/ML for scientific discovery and engineering design
-          </div>
+    <!-- Update href to your CV filename -->
+    <a href="azza_fadhel_cv.pdf" download class="cv-btn">
+      <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download CV
+    </a>
+    <span class="update-badge">(Last Update: May 2026)</span>
+  </div>
+</header>
 
-          <h1><span class="gradient-text">Azza</span><br />Fadhel</h1>
+<!-- ════════════ PAGE CONTENT ════════════ -->
+<div class="page">
 
-          <p class="subtitle">
-            PhD Candidate in Computer Science at Washington State University.
-          </p>
+  <!-- ══════════════════════════════════════════════
+       SECTION 1 — ABOUT (left) + EDUCATION (right)
+       Both cards sit side by side in one row
+  ═══════════════════════════════════════════════ -->
+  <div class="about-edu-row">
 
-          <p class="summary">
-            I develop data-efficient AI methods for expensive scientific and engineering problems, focusing on surrogate modeling,
-            adaptive experimental design, offline black-box optimization, and Bayesian optimization. My work spans nanoporous
-            materials, metal additive manufacturing, and wearable systems.
-          </p>
-
-          <div class="hero-actions">
-            <a class="button primary" href="#research">Explore Research</a>
-            <a class="button" href="assets/cv.pdf" target="_blank" rel="noopener">Download CV</a>
-          </div>
-
-          <div class="quick-links" aria-label="Profile links">
-            <a href="https://github.com/azzafadhel" target="_blank" rel="noopener">GitHub</a>
-            <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank" rel="noopener">Google Scholar</a>
-            <a href="YOUR_RESEARCHGATE_URL" target="_blank" rel="noopener">ResearchGate</a>
-            <a href="mailto:azza.fadhel@wsu.edu">Email</a>
-          </div>
-        </div>
-
-        <aside class="profile-card" aria-label="Profile highlights">
-          <div class="photo-frame">
-            <img
-              src="assets/profile.jpeg"
-              onerror="this.onerror=null; this.src='assets/profile-placeholder.svg';"
-              alt="Azza Fadhel"
-              class="profile-photo"
-            />
-          </div>
-
-          <div class="stat-grid">
-            <div class="stat"><strong>PhD</strong><span>Computer Science</span></div>
-            <div class="stat"><strong>WSU</strong><span>School of EECS</span></div>
-            <div class="stat"><strong>ICML</strong><span>Publication</span></div>
-            <div class="stat"><strong>AAAI</strong><span>IAAI Award</span></div>
-          </div>
-        </aside>
+    <!-- ABOUT ME -->
+    <section class="card" id="about">
+      <h2 class="card-title">About Me</h2>
+      <div class="about-text">
+        <p>I am a Ph.D. candidate in Computer Science at <a href="https://wsu.edu" target="_blank">Washington State University</a>, advised by <a href="#" target="_blank">Prof. Jana Doppa</a> and <a href="#" target="_blank">Prof. Nghia Hoang</a>. My research focuses on <strong>data-efficient AI methods</strong> to accelerate scientific discovery and engineering design in domains where collecting data involves expensive physical experiments or simulations.</p>
+        <p>I specialize in surrogate modeling and adaptive experimental design, with high-impact applications in nanoporous materials discovery, additive manufacturing, and wearable devices for health monitoring. My work has been published at top-tier AI/ML venues including ICML, AAAI, and AISTATS.</p>
       </div>
+
+      <div class="section-sub">Research Interests</div>
+      <ul class="research-list">
+        <li>Surrogate modeling for offline black-box optimization via gradient matching and meta-learning.</li>
+        <li>AI-driven adaptive experimental design for metal additive manufacturing (3D printing).</li>
+        <li>Nanoporous materials discovery via search bias-guided surrogate modeling.</li>
+        <li>Multi-objective, multi-fidelity Bayesian optimization for wearable health devices.</li>
+      </ul>
     </section>
 
-    <section id="research" class="section">
-      <div class="container">
-        <div class="section-head">
+    <!-- EDUCATION — sits to the right of About -->
+    <section class="card" id="education">
+      <h2 class="card-title">Education</h2>
+
+      <!-- Ph.D. -->
+      <div class="edu-entry">
+        <div class="edu-header">
           <div>
-            <div class="section-kicker">Research</div>
-            <h2>Data-efficient AI for high-cost discovery.</h2>
+            <div class="edu-degree-name">Ph.D. in Computer Science</div>
+            <div class="edu-institution">Washington State University</div>
+            <div class="edu-location">Pullman, WA, USA</div>
           </div>
-          <p class="section-note">
-            My research asks how AI can make strong decisions when every real experiment or simulation is expensive.
-          </p>
+          <div class="edu-years">2022 – Present</div>
         </div>
-
-        <div class="grid three">
-          <article class="card feature-card">
-            <div class="card-icon">01</div>
-            <h3>Offline Black-Box Optimization</h3>
-            <p>
-              Learning optimization-aware surrogate models from small offline datasets to propose high-value candidates under data scarcity.
-            </p>
-            <div class="tag-row">
-              <span class="tag">Surrogate Modeling</span>
-              <span class="tag">Meta-Learning</span>
-              <span class="tag">Optimization</span>
-            </div>
-          </article>
-
-          <article class="card feature-card">
-            <div class="card-icon">02</div>
-            <h3>AI-Guided Manufacturing</h3>
-            <p>
-              Adaptive experimental design for discovering feasible metal additive manufacturing configurations with limited lab trials.
-            </p>
-            <div class="tag-row">
-              <span class="tag">Bayesian Optimization</span>
-              <span class="tag">DED</span>
-              <span class="tag">GRCop-42</span>
-            </div>
-          </article>
-
-          <article class="card feature-card">
-            <div class="card-icon">03</div>
-            <h3>Scientific Discovery Systems</h3>
-            <p>
-              Building AI workflows for nanoporous materials, engineering design, and wearable systems where evaluation is costly.
-            </p>
-            <div class="tag-row">
-              <span class="tag">Materials Discovery</span>
-              <span class="tag">Wearables</span>
-              <span class="tag">Experiment Design</span>
-            </div>
-          </article>
+        <div class="edu-detail"><strong>Advisors:</strong> Prof. Jana Doppa &amp; Prof. Nghia Hoang</div>
+        <div class="edu-detail"><strong>Dissertation:</strong> Use-inspired AI for Engineering Design and Scientific Discovery</div>
+        <span class="edu-gpa">GPA: 3.96 / 4.0</span>
+        <div class="proof-row">
+          <!-- <a href="LINK" class="proof-link">🔗 Lab page</a> -->
         </div>
       </div>
-    </section>
 
-    <section id="publications" class="section">
-      <div class="container">
-        <div class="section-head">
+      <!-- M.Sc. -->
+      <div class="edu-entry">
+        <div class="edu-header">
           <div>
-            <div class="section-kicker">Selected Publications</div>
-            <h2>Research at the intersection of ML and real-world design.</h2>
+            <div class="edu-degree-name">M.Sc. Computer Science 🎓</div>
+            <div class="edu-institution">Washington State University</div>
+            <div class="edu-location">Pullman, WA, USA</div>
           </div>
-          <p class="section-note">
-            Add paper links, arXiv links, project pages, or BibTeX later.
-          </p>
+          <div class="edu-years">2022 – 2025</div>
         </div>
-
-        <div class="card publication-card">
-          <article class="publication">
-            <h3>Learning Surrogates for Offline Black-Box Optimization via Gradient Matching</h3>
-            <p>
-              <strong>Minh Hoang, Azza Fadhel, Aryan Deshwal, Janardhan Rao Doppa, Trong Nghia Hoang.</strong>
-              <span class="venue">ICML 2024</span>.
-            </p>
-          </article>
-
-          <article class="publication">
-            <h3>Discovery of Feasible 3D Printing Configurations for Metal Alloys via AI-Driven Adaptive Experimental Design</h3>
-            <p>
-              <strong>Azza Fadhel</strong>, Nathaniel W. Zuckschwerdt, Aryan Deshwal, Susmita Bose, Amit Bandyopadhyay, Jana Doppa.
-              <span class="venue">AAAI/IAAI 2026</span>.
-            </p>
-          </article>
-
-          <article class="publication">
-            <h3>Nanoporous Materials Discovery via Search Bias-Guided Surrogate Modeling</h3>
-            <p>
-              <strong>Azza Fadhel</strong>, Yassine Chemingui, Minh Hoang, Aryan Deshwal, Trong Nghia Hoang, Jana Doppa.
-              <span class="venue">AAAI 2026</span>.
-            </p>
-          </article>
-
-          <article class="publication">
-            <h3>Black-Box Optimization from Small Offline Datasets via Meta Learning with Synthetic Tasks</h3>
-            <p>
-              <strong>Azza Fadhel</strong>, The Hung Tran, Trong Nghia Hoang, Janardhan Rao Doppa.
-              <span class="venue">AISTATS 2026</span>.
-            </p>
-          </article>
-
-          <article class="publication">
-            <h3>Artificial Intelligence Driven Approach to Accelerate Discovery of Directed Energy Deposition of GRCop-42</h3>
-            <p>
-              Nathaniel W. Zuckschwerdt, <strong>Azza Fadhel</strong>, Aryan Deshwal, Janardhan Rao Doppa, Susmita Bose, Amit Bandyopadhyay.
-              <span class="venue">Journal of Virtual and Physical Prototyping, 2026</span>.
-            </p>
-          </article>
+        <div class="edu-detail"><strong>Thesis:</strong> Nanoporous Materials Discovery via Search Bias-Guided Surrogate Modeling</div>
+        <span class="edu-gpa">GPA: 3.97 / 4.0</span>
+        <div class="proof-row">
+          <!-- <a href="THESIS_LINK" class="proof-link">📄 Thesis</a> -->
+          <!-- <img src="graduation.jpg" class="proof-img-thumb" onclick="openLightbox(this.src)"> -->
         </div>
       </div>
-    </section>
 
-    <section id="experience" class="section">
-      <div class="container">
-        <div class="section-head">
+      <!-- Engineering Degree -->
+      <div class="edu-entry">
+        <div class="edu-header">
           <div>
-            <div class="section-kicker">Experience</div>
-            <h2>Research, teaching, and mentoring.</h2>
+            <div class="edu-degree-name">Engineering Degree in CS 🎓</div>
+            <div class="edu-institution">École Polytechnique de Tunisie</div>
+            <div class="edu-location">Tunis, Tunisia</div>
           </div>
+          <div class="edu-years">2019 – 2022</div>
         </div>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="time">2022 — Present</div>
-            <div>
-              <h3>Graduate Research Assistant · Washington State University</h3>
-              <p>
-                Developing optimization-aware AI methods for offline black-box optimization, scientific discovery, and engineering design.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="time">2023 — Present</div>
-            <div>
-              <h3>Graduate Teaching Assistant · Washington State University</h3>
-              <p>
-                Supporting courses in machine learning, artificial intelligence, algorithms, databases, and neural networks.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="time">2025</div>
-            <div>
-              <h3>Section Leader · Stanford Code in Place</h3>
-              <p>
-                Taught Python programming to a global cohort through live weekly sessions and interactive coding support.
-              </p>
-            </div>
-          </div>
+        <div class="edu-detail"><strong>Major:</strong> Signals and Systems</div>
+        <div class="edu-detail"><strong>Graduated with Excellence</strong></div>
+        <div class="proof-row">
+          <!-- <img src="diploma.jpg" class="proof-img-thumb" onclick="openLightbox(this.src)"> -->
         </div>
       </div>
-    </section>
 
-    <section id="awards" class="section">
-      <div class="container">
-        <div class="section-head">
+      <!-- First Cycle -->
+      <div class="edu-entry">
+        <div class="edu-header">
           <div>
-            <div class="section-kicker">Awards & Service</div>
-            <h2>Recognition and community involvement.</h2>
+            <div class="edu-degree-name">University First Cycle Studies</div>
+            <div class="edu-institution" style="font-style:italic;font-size:.76rem;">Dual Degree: Mathematics – Physics</div>
+            <div class="edu-institution">IPEIT, Tunisia</div>
           </div>
+          <div class="edu-years">2017 – 2019</div>
         </div>
-
-        <div class="grid two">
-          <article class="card">
-            <h3>Awards & Honors</h3>
-            <ul class="clean-list">
-              <li>Innovative Deployed AI Application Award, AAAI/IAAI 2026</li>
-              <li>Founders’ Award for Outstanding Masters Thesis Student, 2026</li>
-              <li>Outstanding Graduate Teaching Assistant Award, WSU, 2025</li>
-              <li>ICML Scholarship Award, 2024</li>
-              <li>Tunisian Government Scholarship for Engineering Study</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Service & Leadership</h3>
-            <ul class="clean-list">
-              <li>Co-Organizer, AAAI Workshop on AI to Accelerate Science and Engineering</li>
-              <li>Co-Instructor, AAAI Tutorial on Offline Black-Box Optimization</li>
-              <li>Program committee and reviewer for AI/ML venues</li>
-              <li>Mentor, AI4ALL Remote Program</li>
-              <li>Graduate Representative, GradSWE at WSU</li>
-            </ul>
-          </article>
-        </div>
+        <div class="edu-detail"><strong>Graduated with 76th National Rank</strong></div>
       </div>
+
     </section>
+  </div><!-- end about-edu-row -->
 
-    <section id="skills" class="section">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Technical Skills</div>
-            <h2>Tools I use to build and study AI systems.</h2>
-          </div>
-        </div>
+  <!-- ══ RESEARCH PROJECTS ══ -->
+  <section class="card" id="projects">
+    <h2 class="card-title">Research Projects</h2>
 
-        <div class="skills">
-          <span class="skill">Python</span>
-          <span class="skill">PyTorch</span>
-          <span class="skill">GPyTorch</span>
-          <span class="skill">BoTorch</span>
-          <span class="skill">scikit-learn</span>
-          <span class="skill">AutoGluon</span>
-          <span class="skill">Transformers</span>
-          <span class="skill">Gaussian Processes</span>
-          <span class="skill">Bayesian Optimization</span>
-          <span class="skill">Surrogate Modeling</span>
-          <span class="skill">Meta-Learning</span>
-          <span class="skill">Git/GitHub</span>
-          <span class="skill">Linux</span>
-          <span class="skill">Slurm</span>
-          <span class="skill">LaTeX</span>
-        </div>
+    <!-- TO ADD A PROJECT: copy one project-item block and paste after the last one -->
+    <!-- TO ADD A PROJECT IMAGE: inside .project-img, replace the placeholder div with:
+         <img src="your-image.jpg" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;"> -->
+
+    <div class="project-item">
+      <div class="project-img"><div class="project-img-placeholder">🔬</div></div>
+      <div>
+        <div class="project-tag">Materials Discovery</div>
+        <div class="project-title">Surrogate Modeling for Offline Black-Box Optimization</div>
+        <div class="project-desc">ML surrogates from small offline datasets via gradient-matching and meta-learning with Gaussian-process synthetic task generation. See <a href="#" target="_blank">Learning Surrogates via Gradient Matching (ICML 2024)</a> and <a href="#" target="_blank">Black-Box Optimization via Meta Learning (AISTATS 2026)</a>.</div>
+        <div class="proof-row"></div>
       </div>
-    </section>
-
-    <section id="contact" class="section contact-section">
-      <div class="container">
-        <div class="contact-card">
-          <div>
-            <div class="section-kicker">Contact</div>
-            <h2>Let’s connect.</h2>
-            <p>
-              I’m interested in AI for scientific discovery, optimization, adaptive experimentation, and practical AI engineering systems.
-            </p>
-          </div>
-
-          <div class="contact-actions">
-            <a class="button primary" href="mailto:azza.fadhel@wsu.edu">Email Me</a>
-            <a class="button" href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <span>© <span id="year"></span> Azza Fadhel. All rights reserved.</span>
-      <span>Built with HTML, CSS, JavaScript, and GitHub Pages.</span>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <div class="project-item">
+      <div class="project-img"><div class="project-img-placeholder">🏗️</div></div>
+      <div>
+        <div class="project-tag">Additive Manufacturing</div>
+        <div class="project-title">AI-Driven Adaptive Experimental Design for Metal 3D Printing</div>
+        <div class="project-desc">Probabilistic surrogate frameworks for rapid, defect-free printing of NASA's GRCop-42 alloy. See <a href="#" target="_blank">Discovery of Feasible 3D Printing Configurations (AAAI/IAAI 2026)</a>.</div>
+        <div class="proof-row"></div>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-img"><div class="project-img-placeholder">⚗️</div></div>
+      <div>
+        <div class="project-tag">Scientific Discovery</div>
+        <div class="project-title">Nanoporous Materials Discovery</div>
+        <div class="project-desc">Search bias-guided surrogate modeling combining value-matching and optimization-regularized objectives. See <a href="#" target="_blank">Nanoporous Materials Discovery (AAAI AISI 2026)</a>.</div>
+        <div class="proof-row"></div>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-img"><div class="project-img-placeholder">⌚</div></div>
+      <div>
+        <div class="project-tag">Healthcare Wearables</div>
+        <div class="project-title">Multi-Objective Bayesian Optimization for Wearable Devices</div>
+        <div class="project-desc">Multi-fidelity Bayesian optimization to jointly optimize energy efficiency and sensing accuracy for continuous health monitoring. See <a href="#" target="_blank">Wear-DSE (ESWEEK 2026, under review)</a>.</div>
+        <div class="proof-row"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PUBLICATIONS ══ -->
+  <section class="card" id="publications">
+    <h2 class="card-title">Select Publications</h2>
+
+    <!-- TO ADD A PUBLICATION: copy one pub-item block and paste after the last one -->
+
+    <div class="pub-item">
+      <div class="pub-icon">📄</div>
+      <div>
+        <a class="pub-title" href="#" target="_blank">Discovery of Feasible 3D Printing Configurations for Metal Alloys via AI-Driven Adaptive Experimental Design</a>
+        <div class="pub-authors"><strong>A. Fadhel</strong>, N. W. Zuckschwerdt, A. Deshwal, S. Bose, A. Bandyopadhyay, J. Doppa</div>
+        <div class="pub-venue">AAAI / IAAI, 2026 · 24% acceptance rate</div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-icon">📄</div>
+      <div>
+        <a class="pub-title" href="#" target="_blank">Nanoporous Materials Discovery via Search Bias-Guided Surrogate Modeling</a>
+        <div class="pub-authors"><strong>A. Fadhel</strong>, Y. Chemingui, M. Hoang, A. Deshwal, T. N. Hoang, J. Doppa</div>
+        <div class="pub-venue">AAAI (AISI Track), 2026 · 24.1% acceptance rate</div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-icon">📄</div>
+      <div>
+        <a class="pub-title" href="#" target="_blank">Black-Box Optimization from Small Offline Datasets via Meta Learning with Synthetic Tasks</a>
+        <div class="pub-authors"><strong>A. Fadhel</strong>, T. H. Tran, T. N. Hoang, J. R. Doppa</div>
+        <div class="pub-venue">AISTATS, 2026 · 25% acceptance rate</div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-icon">📄</div>
+      <div>
+        <a class="pub-title" href="#" target="_blank">Learning Surrogates for Offline Black-Box Optimization via Gradient Matching</a>
+        <div class="pub-authors">M. Hoang, <strong>A. Fadhel</strong>, A. Deshwal, J. R. Doppa, T. N. Hoang</div>
+        <div class="pub-venue">ICML, 2024 · 27% acceptance rate</div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-icon">📄</div>
+      <div>
+        <a class="pub-title" href="#" target="_blank">Artificial Intelligence Driven Approach to Accelerate Discovery of Directed Energy Deposition of GRCop-42</a>
+        <div class="pub-authors">N. W. Zuckschwerdt, <strong>A. Fadhel</strong>, A. Deshwal, J. R. Doppa, S. Bose, A. Bandyopadhyay</div>
+        <div class="pub-venue">Journal of Virtual and Physical Prototyping, 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SKILLS ══ -->
+  <section class="card" id="skills">
+    <h2 class="card-title">Technical Skills</h2>
+    <div class="skills-2col">
+      <div>
+        <div class="skill-group-title">Programming Languages</div>
+        <div class="skills-grid"><span class="skill-pill">Python</span><span class="skill-pill">C/C++</span><span class="skill-pill">SQL</span><span class="skill-pill">Bash</span></div>
+        <div class="skill-group-title">ML / AI</div>
+        <div class="skills-grid"><span class="skill-pill">PyTorch</span><span class="skill-pill">Gaussian Processes</span><span class="skill-pill">Bayesian Optimization</span><span class="skill-pill">Surrogate Modeling</span><span class="skill-pill">Meta-Learning</span><span class="skill-pill">GPyTorch</span><span class="skill-pill">BoTorch</span><span class="skill-pill">Diffusion Models</span><span class="skill-pill">scikit-learn</span><span class="skill-pill">AutoGluon</span></div>
+      </div>
+      <div>
+        <div class="skill-group-title">Data Science</div>
+        <div class="skills-grid"><span class="skill-pill">NumPy</span><span class="skill-pill">pandas</span><span class="skill-pill">SciPy</span><span class="skill-pill">Matplotlib</span><span class="skill-pill">Seaborn</span></div>
+        <div class="skill-group-title">Systems &amp; Tools</div>
+        <div class="skills-grid"><span class="skill-pill">Linux</span><span class="skill-pill">Git/GitHub</span><span class="skill-pill">Slurm</span><span class="skill-pill">LaTeX</span><span class="skill-pill">Jupyter</span><span class="skill-pill">VS Code</span></div>
+        <div class="skill-group-title">Human Languages</div>
+        <div class="skills-grid"><span class="skill-pill">Arabic (native)</span><span class="skill-pill">French (bilingual)</span><span class="skill-pill">English (professional)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LATEST NEWS ══ -->
+  <section class="card" id="news">
+    <h2 class="card-title">Latest News</h2>
+
+    <!-- TO ADD NEWS: copy a news-item block -->
+
+    <div class="news-item">
+      <div class="news-date">April 2026</div>
+      <div class="news-text">Thrilled to receive three amazing awards! 🎉
+        <ul>
+          <li>Founders' Award for Outstanding Master's Thesis Student — Association for Faculty Women</li>
+          <li>Innovative Deployed AI Application Award — AAAI / IAAI 2026</li>
+          <li>AAAI Scholarship and Volunteer Award</li>
+        </ul>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2026</div>
+      <div class="news-text">Papers accepted:
+        <ul>
+          <li>AAAI/IAAI 2026 — Discovery of Feasible 3D Printing Configurations for Metal Alloys</li>
+          <li>AAAI AISI 2026 — Nanoporous Materials Discovery via Search Bias-Guided Surrogate Modeling</li>
+          <li>AISTATS 2026 — Black-Box Optimization from Small Offline Datasets via Meta Learning</li>
+        </ul>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2025</div>
+      <div class="news-text">Received the Outstanding Graduate Teaching Assistant Award from both Voiland College of Engineering and the EECS Department at WSU.</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2024</div>
+      <div class="news-text">Received the ICML Scholarship Award and attended ICML in Vienna, Austria. Volunteered at WiML 2024.</div>
+    </div>
+  </section>
+
+  <!-- ══ AWARDS ══ -->
+  <section class="card" id="awards">
+    <h2 class="card-title">Awards &amp; Honors</h2>
+
+    <!-- TO ADD AN AWARD: copy an award-item block
+         TO ADD PROOF: uncomment proof-row lines inside the award -->
+
+    <div class="award-item">
+      <div class="award-row">
+        <div class="award-icon">🏆</div>
+        <div><div class="award-name">Founders' Award for Outstanding M.Sc. Thesis</div><div class="award-org">Association for Faculty Women, WSU</div></div>
+        <div class="award-year">2026</div>
+      </div>
+      <div class="proof-row">
+        <!-- <a href="LINK" class="proof-link">🔗 Announcement</a> -->
+        <!-- <img src="award_photo.jpg" class="proof-img-thumb" onclick="openLightbox(this.src)"> -->
+      </div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-row">
+        <div class="award-icon">🏆</div>
+        <div><div class="award-name">Innovative Deployed AI Application Award</div><div class="award-org">AAAI / IAAI 2026</div></div>
+        <div class="award-year">2026</div>
+      </div>
+      <div class="proof-row"></div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-row">
+        <div class="award-icon">🏆</div>
+        <div><div class="award-name">AAAI Scholarship and Volunteer Award</div><div class="award-org">Association for the Advancement of Artificial Intelligence</div></div>
+        <div class="award-year">2026</div>
+      </div>
+      <div class="proof-row"></div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-row">
+        <div class="award-icon">🏆</div>
+        <div><div class="award-name">Outstanding Graduate Teaching Assistant</div><div class="award-org">Voiland College of Engineering &amp; EECS, WSU</div></div>
+        <div class="award-year">2025</div>
+      </div>
+      <div class="proof-row"></div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-row">
+        <div class="award-icon">🏆</div>
+        <div><div class="award-name">ICML Scholarship Award</div><div class="award-org">International Conference on Machine Learning, Vienna</div></div>
+        <div class="award-year">2024</div>
+      </div>
+      <div class="proof-row"></div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-row">
+        <div class="award-icon">🏆</div>
+        <div><div class="award-name">Nakhara Scholarship</div><div class="award-org">Voiland College of Engineering, WSU</div></div>
+        <div class="award-year">2022–23</div>
+      </div>
+      <div class="proof-row"></div>
+    </div>
+
+    <div class="award-item">
+      <div class="award-row">
+        <div class="award-icon">🏆</div>
+        <div><div class="award-name">Tunisian Government Scholarship for Engineering</div><div class="award-org">Top 5% nationally — Qualification Exam</div></div>
+        <div class="award-year">2019–22</div>
+      </div>
+      <div class="proof-row"></div>
+    </div>
+  </section>
+
+  <!-- ══ EXPERIENCE (tabbed) ══ -->
+  <section class="card" id="experience">
+    <h2 class="card-title">Experience</h2>
+    <div class="exp-tab-btns">
+      <button class="exp-tab-btn active" onclick="showTab('research-exp',this)" id="btn-research-exp">🔬 Research Experience</button>
+      <button class="exp-tab-btn" onclick="showTab('teaching-exp',this)" id="btn-teaching-exp">🎓 Teaching Experience</button>
+    </div>
+
+    <!-- RESEARCH -->
+    <div class="exp-panel active" id="research-exp">
+      <div class="exp-item">
+        <div style="display:flex;align-items:baseline;gap:.45rem;margin-bottom:.15rem;">
+          <div class="exp-dot"></div>
+          <div><span class="exp-title">Graduate Research Assistant</span><span class="exp-date">(Sep 2022 – Present)</span></div>
+        </div>
+        <div class="exp-org">EECS Department, Washington State University · Pullman, WA</div>
+        <div class="exp-desc">Developing ML-based surrogate models for offline black-box optimization via gradient-matching. Created search bias-guided frameworks to accelerate materials discovery. Built probabilistic surrogates for metal additive manufacturing and multi-objective Bayesian optimization for healthcare wearables.</div>
+        <div class="proof-row">
+          <!-- <a href="LAB_URL" class="proof-link">🔗 Lab page</a> -->
+          <!-- <img src="lab_photo.jpg" class="proof-img-thumb" onclick="openLightbox(this.src)"> -->
+        </div>
+      </div>
+      <div class="exp-item">
+        <div style="display:flex;align-items:baseline;gap:.45rem;margin-bottom:.15rem;">
+          <div class="exp-dot"></div>
+          <div><span class="exp-title">Research Intern</span><span class="exp-date">(Mar – May 2022)</span></div>
+        </div>
+        <div class="exp-org">University of Louisville, USA</div>
+        <div class="exp-desc">Explored applications of quantum computing in machine learning; conducted comparative analysis of quantum and classical approaches.</div>
+        <div class="proof-row"></div>
+      </div>
+      <div class="exp-item">
+        <div style="display:flex;align-items:baseline;gap:.45rem;margin-bottom:.15rem;">
+          <div class="exp-dot" style="background:var(--accent3);"></div>
+          <div><span class="exp-title">Quantum Research Intern</span><span class="exp-date">(Jun – Aug 2021)</span></div>
+        </div>
+        <div class="exp-org">QWorld (Remote)</div>
+        <div class="exp-desc">Implemented hybrid quantum-classical models for image classification using Quanvolutional Neural Networks, Ensemble Classification, and Quantum Transfer Learning.</div>
+        <div class="proof-row"></div>
+      </div>
+    </div>
+
+    <!-- TEACHING -->
+    <div class="exp-panel" id="teaching-exp">
+      <div class="exp-item">
+        <div style="display:flex;align-items:baseline;gap:.45rem;margin-bottom:.15rem;">
+          <div class="exp-dot teach"></div>
+          <div><span class="exp-title">Graduate Teaching Assistant</span><span class="exp-date">(Jan 2023 – Present)</span></div>
+        </div>
+        <div class="exp-org">EECS Department, Washington State University · Pullman, WA</div>
+        <ul class="course-list">
+          <li class="course-item"><span class="course-icon">🏫</span><span><span class="course-code">CptS 434/534</span> — Neural Network Design and Applications <span class="course-seasons">Spring 2023, Spring 2025</span></span></li>
+          <li class="course-item"><span class="course-icon">🏫</span><span><span class="course-code">CptS 451</span> — Introduction to Database Systems <span class="course-seasons">Spring 2025</span></span></li>
+          <li class="course-item"><span class="course-icon">🏫</span><span><span class="course-code">CptS 350</span> — Design and Analysis of Algorithms <span class="course-seasons">Fall 2024</span></span></li>
+          <li class="course-item"><span class="course-icon">🏫</span><span><span class="course-code">CptS 440/540</span> — Artificial Intelligence <span class="course-seasons">Spring 2024</span></span></li>
+          <li class="course-item"><span class="course-icon">🏫</span><span><span class="course-code">CptS 570</span> — Machine Learning <span class="course-seasons">Fall 2023</span></span></li>
+        </ul>
+        <div class="proof-row"></div>
+      </div>
+      <div class="exp-item">
+        <div style="display:flex;align-items:baseline;gap:.45rem;margin-bottom:.15rem;">
+          <div class="exp-dot teach"></div>
+          <div><span class="exp-title">Section Leader</span><span class="exp-date">(Apr – May 2025)</span></div>
+        </div>
+        <div class="exp-org">Code in Place, Stanford University (Remote)</div>
+        <div class="exp-desc">Taught Python programming to a global cohort through live weekly sessions, emphasizing interactive learning and coding fundamentals.</div>
+        <div class="proof-row"></div>
+      </div>
+      <div class="exp-item">
+        <div style="display:flex;align-items:baseline;gap:.45rem;margin-bottom:.15rem;">
+          <div class="exp-dot teach"></div>
+          <div><span class="exp-title">Teaching Assistant (Volunteer)</span><span class="exp-date">(Apr 2025)</span></div>
+        </div>
+        <div class="exp-org">NVIDIA Deep Learning Institute, Washington State University</div>
+        <div class="exp-desc">Supported certified course labs on neural networks and PyTorch.</div>
+        <div class="proof-row"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CERTIFICATIONS ══ -->
+  <section class="card" id="certifications">
+    <h2 class="card-title">Certifications</h2>
+
+    <!-- TO ADD A CERT: copy a cert-item block
+         TO ADD PROOF: uncomment the proof-row lines -->
+
+    <div class="cert-item">
+      <div class="cert-row">
+        <div class="cert-icon">✦</div>
+        <div><div class="cert-name">Advanced Technical Interview Prep</div><div class="cert-issuer">CodePath · Data structures, algorithms &amp; coding interview practice</div></div>
+        <div class="cert-year">2026</div>
+      </div>
+      <div class="proof-row">
+        <!-- <a href="YOUR_CODEPATH_CERT_URL" target="_blank" class="proof-link">🎓 View Certificate</a> -->
+        <!-- <img src="codepath_cert.jpg" class="proof-img-thumb" onclick="openLightbox(this.src)"> -->
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-row">
+        <div class="cert-icon">✦</div>
+        <div><div class="cert-name">CRA-WP Mentoring Mentors Workshop Series</div><div class="cert-issuer">Computing Research Association · 5-session evidence-based mentoring program</div></div>
+        <div class="cert-year">2025</div>
+      </div>
+      <div class="proof-row"></div>
+    </div>
+
+    <!-- TEMPLATE — copy, fill in, and paste above this comment:
+    <div class="cert-item">
+      <div class="cert-row">
+        <div class="cert-icon">✦</div>
+        <div>
+          <div class="cert-name">CERTIFICATION NAME</div>
+          <div class="cert-issuer">Issuer · Short description</div>
+        </div>
+        <div class="cert-year">YEAR</div>
+      </div>
+      <div class="proof-row">
+        <a href="CERTIFICATE_URL" target="_blank" class="proof-link">🎓 View Certificate</a>
+        <img src="cert_photo.jpg" class="proof-img-thumb" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+    -->
+  </section>
+
+  <!-- ══ SERVICE ══ -->
+  <section class="card" id="service">
+    <h2 class="card-title">Professional Services &amp; Outreach</h2>
+    <div class="service-section">
+      <div class="service-subtitle">Workshop &amp; Tutorial Organizer</div>
+      <ul class="service-list">
+        <li>Co-Organizer, 5th AAAI Workshop on AI to Accelerate Science and Engineering (AI4Science)<span>2026</span></li>
+        <li>Co-instructor, Half-day AAAI Tutorial: Black-box Optimization from Offline Datasets<span>2026</span></li>
+      </ul>
+    </div>
+    <div class="service-section">
+      <div class="service-subtitle">Program Committee Member</div>
+      <ul class="service-list">
+        <li>ICML<span>2025, 2026</span></li>
+        <li>AAAI / AISI / IAAI<span>2024, 2025, 2026</span></li>
+        <li>ICLR<span>2026</span></li>
+        <li>AISTATS<span>2026</span></li>
+        <li>NeurIPS<span>2026</span></li>
+      </ul>
+    </div>
+    <div class="service-section">
+      <div class="service-subtitle">Volunteer &amp; Outreach</div>
+      <ul class="service-list">
+        <li>Conference Volunteer: ICML 2024, WiML 2024, AAAI 2026</li>
+        <li>Mentor, AI4ALL Remote Program<span>May–Dec 2025</span></li>
+        <li>Graduate Representative, GradSWE, WSU<span>Fall 2025–Present</span></li>
+        <li>Judge, EECS Capstone Poster Competition, WSU<span>Fall 2025</span></li>
+        <li>Judge, CrimsonCode Hackathon, WSU<span>Spring 2026</span></li>
+      </ul>
+    </div>
+    <div class="service-section">
+      <div class="service-subtitle">Journal Reviewer</div>
+      <ul class="service-list">
+        <li>IEEE Transactions on Sustainable Computing<span>2025</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <div class="contact-card" id="contact">
+    <div>
+      <div class="contact-label">Contact</div>
+      <div class="contact-headline">Let's connect.</div>
+      <div class="contact-sub">I'm interested in AI for scientific discovery, optimization, adaptive experimental design, and practical AI engineering systems. Always happy to chat about research, collaborations, or opportunities.</div>
+    </div>
+    <div class="contact-btns">
+      <a href="mailto:azza.fadhel@wsu.edu" class="contact-btn contact-btn-primary">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" stroke="var(--bg)" stroke-width="1.5" fill="none"/></svg>
+        Email Me
+      </a>
+      <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME" target="_blank" class="contact-btn contact-btn-secondary">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+
+</div><!-- end page -->
+
+<footer>
+  <p>Azza Fadhel · Ph.D. Candidate, Washington State University · <a href="mailto:azza.fadhel@wsu.edu" style="color:var(--accent);">azza.fadhel@wsu.edu</a> · Pullman, WA 99163</p>
+</footer>
+
+<script>
+function showTab(panelId,btn){
+  document.querySelectorAll('.exp-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.exp-tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(panelId).classList.add('active');
+  btn.classList.add('active');
+}
+document.querySelectorAll('a[href="#research-exp"],a[href="#teaching-exp"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    const id=this.getAttribute('href').slice(1);
+    const btn=document.getElementById('btn-'+id);
+    if(btn)showTab(id,btn);
+    setTimeout(()=>document.getElementById('experience').scrollIntoView({behavior:'smooth'}),50);
+  });
+});
+function openLightbox(src){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox').classList.add('open');}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      document.querySelectorAll('nav a').forEach(l=>l.classList.remove('active'));
+      const a=document.querySelector(`nav a[href="#${e.target.id}"]`);
+      if(a)a.classList.add('active');
+    }
+  });
+},{rootMargin:'-35% 0px -55% 0px'});
+document.querySelectorAll('section[id],div[id="contact"]').forEach(s=>obs.observe(s));
+</script>
 </body>
 </html>
