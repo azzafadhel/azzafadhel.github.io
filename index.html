@@ -240,6 +240,182 @@ footer{position:relative;z-index:1;text-align:center;padding:1.5rem 2rem;border-
   nav{gap:.7rem 1rem;padding:.75rem 1rem;}
   .page,.hero{padding-left:1.2rem;padding-right:1.2rem;}
 }
+
+
+/* ══════════════════════════════════════════════
+   FINAL READABILITY UPGRADE — larger text + balanced hero
+══════════════════════════════════════════════ */
+body{
+  font-size:17px;
+  line-height:1.8;
+}
+
+nav a{
+  font-size:.82rem;
+  letter-spacing:.11em;
+}
+
+.card-title{
+  font-size:2rem;
+}
+
+.about-text p,
+.project-desc,
+.news-text,
+.exp-desc,
+.contact-sub{
+  font-size:1.05rem;
+  line-height:1.85;
+}
+
+.research-list li,
+.service-list li,
+.news-text li,
+.course-item{
+  font-size:1rem;
+  line-height:1.75;
+}
+
+.section-sub,
+.skill-group-title,
+.service-subtitle,
+.contact-label{
+  font-size:.82rem;
+}
+
+.skill-pill{
+  font-size:.92rem;
+  padding:.34rem .82rem;
+}
+
+.news-item{
+  grid-template-columns:130px 1fr;
+  gap:1.4rem;
+  padding:1.15rem 0;
+}
+
+.news-date{
+  font-size:.95rem;
+}
+
+.pub-title{
+  font-size:1.05rem;
+}
+
+.pub-authors{
+  font-size:.95rem;
+}
+
+.pub-venue{
+  font-size:.92rem;
+}
+
+.award-name,
+.cert-name,
+.exp-title{
+  font-size:1.03rem;
+}
+
+.award-org,
+.cert-issuer,
+.exp-org{
+  font-size:.92rem;
+}
+
+.award-year,
+.cert-year,
+.exp-date{
+  font-size:.9rem;
+}
+
+.edu-degree-name{
+  font-size:1.03rem;
+}
+
+.edu-years{
+  font-size:.9rem;
+}
+
+.edu-institution{
+  font-size:.94rem;
+}
+
+.edu-location{
+  font-size:.88rem;
+}
+
+.edu-detail{
+  font-size:.9rem;
+}
+
+.edu-gpa{
+  font-size:.82rem;
+}
+
+.project-title{
+  font-size:1.35rem;
+}
+
+.project-tag{
+  font-size:.82rem;
+}
+
+.card{
+  padding:2.4rem;
+}
+
+/* Keep the name elegant but not oversized */
+.hero-text h1{
+  font-size:clamp(3rem,5.4vw,4.6rem);
+  line-height:1.05;
+  margin-bottom:.7rem;
+}
+
+.hero-subtitle{
+  font-size:1rem;
+}
+
+.hero-location{
+  font-size:.98rem;
+}
+
+.hero-photo{
+  width:240px;
+  height:240px;
+}
+
+@media(max-width:800px){
+  body{
+    font-size:16px;
+  }
+
+  nav a{
+    font-size:.72rem;
+  }
+
+  .card{
+    padding:1.5rem;
+  }
+
+  .card-title{
+    font-size:1.7rem;
+  }
+
+  .news-item{
+    grid-template-columns:1fr;
+    gap:.35rem;
+  }
+
+  .hero-text h1{
+    font-size:clamp(2.6rem,12vw,3.8rem);
+  }
+
+  .hero-photo{
+    width:210px;
+    height:210px;
+  }
+}
+
 </style>
 </head>
 <body>
