@@ -96,11 +96,12 @@ nav a:hover,nav a.active{color:var(--accent2);}
 .lightbox-close:hover{color:var(--text);}
 
 /* ══ PROJECTS ══ */
-.project-item{display:grid;grid-template-columns:200px 1fr;gap:1.4rem;padding:1.6rem 0;border-bottom:1px solid var(--border);}
+.project-item{display:grid;grid-template-columns:280px 1fr;gap:1.4rem;padding:1.6rem 0;border-bottom:1px solid var(--border);}
 .project-item:last-child{border-bottom:none;padding-bottom:0;}
 .project-item:first-child{padding-top:0;}
-.project-img{border-radius:10px;overflow:hidden;background:var(--surface2);border:1px solid var(--border);}
+.project-img{border-radius:10px;overflow:hidden;background:#ffffff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:.55rem;}
 .project-img-placeholder{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--surface2) 0%,rgba(192,132,252,.1) 100%);font-size:2.5rem;}
+.project-img img{width:100%;height:auto;display:block;object-fit:contain;aspect-ratio:4/3;border-radius:6px;background:#fff;}
 .project-tag{display:inline-block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .55rem;border-radius:999px;background:rgba(192,132,252,.12);border:1px solid rgba(192,132,252,.2);color:var(--accent2);margin-bottom:.5rem;margin-right:.3rem;}
 .project-title{font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--text);margin-bottom:.6rem;line-height:1.3;}
 .project-desc{font-size:.83rem;color:var(--muted);line-height:1.7;}
@@ -284,6 +285,27 @@ body{font-size:17px;line-height:1.8;}
   .hero-text h1{font-size:clamp(2.6rem,12vw,3.8rem);}
   .hero-photo{width:210px;height:210px;}
 }
+
+/* Updated project content within the original portfolio design */
+.profile-initials{font-family:'Cormorant Garamond',serif;color:var(--accent2);font-size:5rem;line-height:1;}
+#projects .project-item{grid-template-columns:minmax(320px,42%) minmax(0,1fr);gap:1.8rem;align-items:start;}
+#projects .project-figure{margin:0;min-width:0;}
+#projects .project-image-button{display:flex;align-items:center;justify-content:center;width:100%;min-height:250px;padding:1rem;border-radius:10px;border:1px solid var(--border);background:white;cursor:zoom-in;}
+#projects .project-image-button img{display:block;width:100%;height:auto;max-height:320px;object-fit:contain;}
+#projects .project-figure figcaption{color:var(--muted);font-size:.78rem;margin-top:.45rem;line-height:1.5;}
+#projects .project-title{font-size:1.55rem;line-height:1.3;margin:.35rem 0 .65rem;}
+#projects .project-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;margin:.5rem 0;}
+#projects .project-result{background:var(--surface2);border:1px solid var(--border);padding:.8rem;border-radius:9px;}
+#projects .project-result strong{display:block;color:var(--gold);font-family:'DM Sans',sans-serif;font-size:1.55rem;line-height:1.1;margin-bottom:.35rem;}
+#projects .project-result span,#projects .project-result-note{font-size:.85rem;line-height:1.55;color:var(--muted);}
+#projects .project-result-note{margin:.45rem 0;}
+#projects .proof-row{margin-top:.8rem;}
+#projects .proof-link{display:inline-block;color:var(--accent2);font-size:.9rem;font-weight:500;text-decoration:underline;text-underline-offset:4px;}
+#projects .project-ongoing .project-img-placeholder{border-radius:10px;min-height:250px;}
+#projects .project-image-button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+@media(max-width:900px){#projects .project-item{grid-template-columns:1fr;}#projects .project-figure{max-width:720px;width:100%;}}
+@media(max-width:550px){#projects .project-results{grid-template-columns:1fr;}#projects .project-image-button{min-height:170px;}#projects .project-image-button img{max-height:260px;}}
+
 </style>
 </head>
 <body>
@@ -307,13 +329,13 @@ body{font-size:17px;line-height:1.8;}
   <a href="#service">Service</a>
   <a href="#certifications">Prof. Dev.</a>
   <a href="#contact">Contact</a>
-  <a href="assets/cv.pdf" download class="nav-cv">↓ CV</a>
+  <a href="assets/azza-fadhel-cv.pdf" download class="nav-cv">↓ CV</a>
 </nav>
 
 <!-- ════════════ HERO ════════════ -->
 <header class="hero">
   <div class="hero-photo">
-    <img src="assets/profile.jpeg" alt="Azza Fadhel">
+    <span class="profile-initials" aria-label="Azza Fadhel">AF</span>
   </div>
   <div class="hero-text">
     <div class="hero-subtitle">Ph.D. Candidate in Computer Science</div>
@@ -336,7 +358,7 @@ body{font-size:17px;line-height:1.8;}
         <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" stroke="var(--bg)" stroke-width="1.5" fill="none"/></svg>
       </a>
     </div>
-    <a href="assets/cv.pdf" download class="cv-btn">
+    <a href="assets/azza-fadhel-cv.pdf" download class="cv-btn">
       <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Download CV
     </a>
@@ -426,154 +448,90 @@ body{font-size:17px;line-height:1.8;}
   <!-- ══ RESEARCH PROJECTS ══ -->
   <section class="card" id="projects">
     <h2 class="card-title">Research Projects</h2>
-
-    <!-- PROJECT 1 -->
-    <div class="project-item">
-      <div class="project-img"><div class="project-img-placeholder">📈</div></div>
-      <div>
-        <span class="project-tag">ICML 2024</span><span class="project-tag">Offline Optimization</span><span class="project-tag">Surrogate Modeling</span>
-        <div class="project-title">Learning Surrogates for Offline Black-Box Optimization via Gradient Matching</div>
-        <div class="proj-section">
-          <div class="proj-section-label">Problem</div>
-          <p class="project-desc">Many scientific and engineering design tasks require optimizing expensive black-box objectives—materials, molecules, proteins, robot designs—using only a fixed offline dataset of past evaluations. Standard regression surrogates yield unreliable gradients outside the data regime, causing gradient-based search to move toward poor designs.</p>
-        </div>
-        <div class="proj-section">
-          <div class="proj-section-label">Approach</div>
-          <p class="project-desc">We developed <strong>MATCH-OPT</strong>, which constructs monotonically improving trajectories from offline data and trains the surrogate with a gradient-matching objective based on line integrals along those trajectories—encouraging reliable search directions for downstream optimization.</p>
-        </div>
-        <div class="proj-section">
-          <div class="proj-section-label">Results</div>
-          <p class="project-desc">Evaluated on diverse DesignBench tasks (robot morphology, locomotion, superconductors, DNA design), MATCH-OPT achieved the best overall mean normalized rank across strong baselines including COMS, ROMA, BONET, CBAS, CMA-ES, and ensemble surrogates.</p>
-        </div>
-        <div class="proj-role">
-          <p><strong>My role:</strong> Co-designed the MATCH-OPT algorithm and led major parts of the PyTorch implementation—trajectory construction, custom loss, surrogate training, candidate optimization, benchmark evaluation, and empirical analysis. Contributed to writing method and experimental sections; released code for reproducibility.</p>
-        </div>
-        <div class="proof-row"></div>
-      </div>
-    </div>
-
-    <!-- PROJECT 2 -->
-    <div class="project-item">
-      <div class="project-img"><div class="project-img-placeholder">⚗️</div></div>
-      <div>
-        <span class="project-tag">AAAI AISI 2026</span><span class="project-tag">Scientific ML</span><span class="project-tag">Materials Discovery</span>
-        <div class="project-title">Nanoporous Materials Discovery via Search Bias-Guided Surrogate Modeling</div>
-        <div class="proj-section">
-          <div class="proj-section-label">Problem</div>
-          <p class="project-desc">Discovering high-performing COFs and MOFs for carbon capture, methane storage, and hydrogen storage is difficult—each wet-lab evaluation is expensive, and scientists typically have only a small historical dataset alongside a large pool of unevaluated candidates.</p>
-        </div>
-        <div class="proj-section">
-          <div class="proj-section-label">Approach</div>
-          <p class="project-desc">I led development of <strong>OptReg</strong>, a surrogate-guided discovery framework that trains neural surrogates using both value prediction and an optimization-bias regularizer derived from monotonically improving sequences in the offline dataset—encouraging candidates to be ranked by discovery potential rather than prediction accuracy alone.</p>
-        </div>
-        <div class="proj-section">
-          <div class="proj-section-label">Results</div>
-          <p class="project-desc">Evaluated on three real-world tasks (COF methane storage, MOF gravimetric H₂ capacity, MOF volumetric H₂ capacity), OptReg achieved strong improvements over the best offline material: 125.8% on COF(NG) and 309.1% on MOF(UV). Best-in-class on COF(NG) and MOF(UV) vs. MSE surrogates, one-step BO, batch BO, CMA-ES, and diffusion models. Feature-attribution analysis identified pore geometry, density, and void fraction as key structural drivers.</p>
-        </div>
-        <div class="proj-role">
-          <p><strong>My role:</strong> Drove the project end-to-end—problem formulation, algorithm design, surrogate training, candidate-ranking experiments, baseline comparisons, feature-attribution analysis, and paper writing.</p>
-        </div>
-        <div class="proof-row"></div>
-      </div>
-    </div>
-
-    <!-- PROJECT 3 -->
-    <div class="project-item">
-      <div class="project-img"><div class="project-img-placeholder">🧠</div></div>
-      <div>
-        <span class="project-tag">AISTATS 2026</span><span class="project-tag">Meta-Learning</span><span class="project-tag">Gaussian Processes</span>
-        <div class="project-title">Black-Box Optimization from Small Offline Datasets via Meta-Learning with Synthetic Tasks</div>
-        <div class="proj-section">
-          <div class="proj-section-label">Problem</div>
-          <p class="project-desc">Many real-world optimization problems (materials discovery, molecular design, biological sequence design, hardware optimization) operate with tiny or biased offline datasets. Standard surrogates trained on such data fail to learn useful optimization directions and produce poor candidates.</p>
-        </div>
-        <div class="proj-section">
-          <div class="proj-section-label">Approach</div>
-          <p class="project-desc">I led development of <strong>OptBias</strong>, a meta-learning framework that uses <strong>Sim4Opt</strong>—a GP-based synthetic task generator—to create auxiliary functions mimicking the target objective and simulate gradient-ascent trajectories from low to high-value regions. OptBias meta-trains a surrogate on these synthetic tasks so it rapidly adapts to a real target using only a small offline dataset.</p>
-        </div>
-        <div class="proj-section">
-          <div class="proj-section-label">Results</div>
-          <p class="project-desc">Evaluated on the poorest 1% of offline data across 6 benchmarks (Ant morphology, D'Kitty morphology, TFBind8 DNA design, three RNA inverse-folding tasks), OptBias achieved the best overall mean rank (1.33) and best performance on 4/6 tasks—outperforming GA, MINs, COMs, DEMO, LTR, Match-Opt, batch BO, REINFORCE, and ExPT.</p>
-        </div>
-        <div class="proj-role">
-          <p><strong>My role:</strong> Owned the project end-to-end—problem formulation, OptBias algorithm design, Sim4Opt synthetic data generation, meta-learning implementation, fine-tuning and candidate optimization pipelines, benchmark evaluation, ablation studies, and paper writing.</p>
-        </div>
-        <div class="proof-row"></div>
-      </div>
-    </div>
-
-    <!-- PROJECT 4 -->
-    <div class="project-item">
-      <div class="project-img"><div class="project-img-placeholder">🏗️</div></div>
-      <div>
-        <span class="project-tag">AAAI/IAAI 2026</span><span class="project-tag">Deployed AI</span><span class="project-tag">Additive Manufacturing</span>
-        <div class="project-title">Discovery of Feasible 3D Printing Configurations for Metal Alloys via AI-Driven Adaptive Experimental Design</div>
-        <div class="proj-section">
-          <div class="proj-section-label">Problem</div>
-          <p class="project-desc">Finding feasible DED parameters for GRCop-42—a NASA copper alloy with low infrared laser absorptivity and high thermal conductivity—is extremely expensive. The process space exceeds 100 million configurations, and each physical experiment requires machine time, materials, expert labor, and post-print quality analysis. Prior to this work, 37 configurations had been tested over several months without success.</p>
-        </div>
-        <div class="proj-section">
-          <div class="proj-section-label">Approach</div>
-          <p class="project-desc">I led development of <strong>BEAM</strong>, an AI-driven adaptive experimental design framework that models the unknown feasibility function with a probabilistic surrogate trained on past outcomes, uses an active-search acquisition strategy to select batches of promising configurations, and incorporates expert domain constraints to prune infeasible regions.</p>
-        </div>
-        <div class="proj-section">
-          <div class="proj-section-label">Results &amp; Impact</div>
-          <p class="project-desc">Deployed in a real DED laboratory, BEAM discovered feasible configurations at 950W, 700W, 600W, and 500W using only 10 experiments per laser-power setting—and found three feasible configs at 600W within the same budget. This demonstrated, for the first time, that GRCop-42 can be printed at low laser powers (500W–1000W), making advanced aerospace alloy fabrication accessible to smaller labs and lower-cost platforms.</p>
-        </div>
-        <div class="proj-role">
-          <p><strong>My role:</strong> Led the AI/ML side—problem formulation, BEAM algorithm design, surrogate modeling, acquisition strategy, domain constraint integration, experiment planning with materials-science collaborators, trial analysis, and paper writing.</p>
-        </div>
-        <div class="proof-row"></div>
-      </div>
-    </div>
-
-
-    <!-- PROJECT 5 -->
-    <div class="project-item">
-      <div class="project-img"><div class="project-img-placeholder">⌚</div></div>
-      <div>
-        <span class="project-tag">AAAI 2027 · Under Review</span><span class="project-tag">ACM TECS · Under Review</span><span class="project-tag">Multi-Fidelity BO</span>
-        <div class="project-title">OptWear / Wear-DSE: AI-Driven Human-Centered Design of Wearable Health Systems</div>
-        <div class="proj-section">
-          <div class="proj-section-label">Problem</div>
-          <p class="project-desc">Designing wearable health systems requires balancing competing objectives such as energy efficiency, sensing performance, and user-centered considerations while high-fidelity hardware evaluation can be expensive.</p>
-        </div>
-        <div class="proj-section">
-          <div class="proj-section-label">Approach</div>
-          <p class="project-desc">I co-develop multi-objective, multi-fidelity Bayesian optimization methods that combine surrogate modeling with cost-aware experimental selection to explore wearable-system designs efficiently across multiple evaluation fidelities.</p>
-        </div>
-        <div class="proj-section">
-          <div class="proj-section-label">Current Work</div>
-          <p class="project-desc"><strong>OptWear</strong> studies AI-driven human-centered wearable design, while <strong>Wear-DSE</strong> focuses on cost-aware multi-fidelity design-space exploration. Both manuscripts are currently under review.</p>
-        </div>
-        <div class="proj-role">
-          <p><strong>My role:</strong> Co-lead the ML methodology, including surrogate modeling, acquisition design, multi-objective and multi-fidelity optimization, implementation, experiments, and result analysis.</p>
-        </div>
-        <div class="proof-row"></div>
-      </div>
-    </div>
-
-    <!-- PROJECT 6 -->
-    <div class="project-item">
-      <div class="project-img"><div class="project-img-placeholder">🧪</div></div>
-      <div>
-        <span class="project-tag">Ongoing Research</span><span class="project-tag">Constrained Multi-Objective BO</span><span class="project-tag">PFAS Materials</span>
-        <div class="project-title">Data-Efficient Discovery of PFAS-Capturing Materials via Constrained Multi-Objective Bayesian Optimization</div>
-        <div class="proj-section">
-          <div class="proj-section-label">Problem</div>
-          <p class="project-desc">PFAS-capturing material discovery requires optimizing multiple performance objectives while respecting synthesis feasibility, with each physical experiment consuming limited laboratory resources.</p>
-        </div>
-        <div class="proj-section">
-          <div class="proj-section-label">Approach</div>
-          <p class="project-desc">I design constrained multi-objective Bayesian optimization methods that jointly optimize uptake and selectivity while modeling synthesis feasibility, allowing experimental effort to focus on promising and synthesizable candidates.</p>
-        </div>
-        <div class="proj-role">
-          <p><strong>My role:</strong> Lead the computational optimization work, including surrogate modeling, feasibility-aware acquisition, candidate generation, and coordination with experimental collaborators.</p>
-        </div>
-        <div class="proof-row"></div>
-      </div>
-    </div>
-
+<article class="project-item">
+  <figure class="project-figure">
+    <button type="button" class="project-image-button" aria-label="Enlarge figure for Learning Surrogates for Offline Black-Box Optimization via Gradient Matching" onclick="openLightbox('assets/match-opt-overview.webp')"><img src="assets/match-opt-overview.webp" alt="MATCH-OPT framework: monotonic trajectories, value and gradient matching, and surrogate-guided search" loading="lazy"></button>
+    <figcaption>Figure 2 · MATCH-OPT framework · Click to enlarge</figcaption>
+  </figure>
+  <div class="project-content">
+    <div><span class="project-tag">ICML 2024</span><span class="project-tag">Offline optimization</span></div>
+    <h3 class="project-title">Learning Surrogates for Offline Black-Box Optimization via Gradient Matching</h3>
+    <div class="proj-section"><div class="proj-section-label">Problem</div><p>A model trained on a fixed dataset can fit observed values yet give misleading search directions when an optimizer moves beyond the data.</p></div>
+    <div class="proj-section"><div class="proj-section-label">Approach</div><p>MATCH-OPT constructs monotonically improving input sequences from offline data and trains a surrogate to align its gradient with the improvement along those sequences.</p></div>
+    <div class="proj-section"><div class="proj-section-label">Main results</div><div class="project-results"><div class="project-result"><strong>0.283</strong><span>Best mean normalized rank for the top candidate across six DesignBench tasks; lower is better.</span></div><div class="project-result"><strong>0.350</strong><span>Best mean normalized rank for the median candidate across the same tasks.</span></div></div><p class="project-result-note">Results from Tables 1 and 2 of the ICML paper.</p></div>
+    <div class="proj-role"><p><strong>My role:</strong> I led the experimental work: implementation of the trajectory and loss pipelines, surrogate training, candidate search, benchmark comparisons, and empirical analysis.</p></div>
+    <div class="proof-row"><a class="proof-link" href="assets/match-opt-paper.pdf" target="_blank" rel="noopener">Read paper PDF ↗</a></div>
+  </div>
+</article>
+<article class="project-item">
+  <figure class="project-figure">
+    <button type="button" class="project-image-button" aria-label="Enlarge figure for Nanoporous Materials Discovery via Search Bias-Guided Surrogate Modeling" onclick="openLightbox('assets/optreg-overview.webp')"><img src="assets/optreg-overview.webp" alt="OptReg framework: surrogate training with prediction and optimization-bias losses followed by candidate selection" loading="lazy"></button>
+    <figcaption>Figure 2 · OptReg framework · Click to enlarge</figcaption>
+  </figure>
+  <div class="project-content">
+    <div><span class="project-tag">AAAI 2026</span><span class="project-tag">Materials discovery</span></div>
+    <h3 class="project-title">Nanoporous Materials Discovery via Search Bias-Guided Surrogate Modeling</h3>
+    <div class="proj-section"><div class="proj-section-label">Problem</div><p>Large pools of COFs and MOFs contain promising candidates, but property evaluations are costly and historical data alone do not reliably rank unseen materials.</p></div>
+    <div class="proj-section"><div class="proj-section-label">Approach</div><p>OptReg adds an optimization-bias regularizer to value prediction, using improving sequences in offline data to train a surrogate for candidate discovery.</p></div>
+    <div class="proj-section"><div class="proj-section-label">Main results</div><div class="project-results"><div class="project-result"><strong>125.8%</strong><span>Maximum improvement over the best training COF for methane storage.</span></div><div class="project-result"><strong>309.1%</strong><span>Maximum improvement over the best training MOF for volumetric hydrogen capacity.</span></div></div><p class="project-result-note">Results use 3,000 training materials and 100 selected candidates; values are improvements over the best training material (Table 1).</p></div>
+    <div class="proj-role"><p><strong>My role:</strong> I led the ML work from problem formulation and method design through training, candidate discovery, baseline comparisons, analysis, and writing.</p></div>
+    <div class="proof-row"><a class="proof-link" href="assets/optreg-paper.pdf" target="_blank" rel="noopener">Read paper PDF ↗</a></div>
+  </div>
+</article>
+<article class="project-item">
+  <figure class="project-figure">
+    <button type="button" class="project-image-button" aria-label="Enlarge figure for Black-Box Optimization from Small Offline Datasets via Meta Learning with Synthetic Tasks" onclick="openLightbox('assets/optbias-overview.webp')"><img src="assets/optbias-overview.webp" alt="OptBias workflow: synthetic GP task generation, meta-learning, and adaptation to a small offline target dataset" loading="lazy"></button>
+    <figcaption>Figure 2 · OptBias workflow · Click to enlarge</figcaption>
+  </figure>
+  <div class="project-content">
+    <div><span class="project-tag">AISTATS 2026</span><span class="project-tag">Small-data optimization</span></div>
+    <h3 class="project-title">Black-Box Optimization from Small Offline Datasets via Meta Learning with Synthetic Tasks</h3>
+    <div class="proj-section"><div class="proj-section-label">Problem</div><p>When only a tiny, low-valued subset of past observations is available, conventional surrogates struggle to learn where high-value designs lie.</p></div>
+    <div class="proj-section"><div class="proj-section-label">Approach</div><p>OptBias generates related synthetic functions with Sim4Opt, meta-learns a reusable optimization bias, and fine-tunes the surrogate on the target dataset.</p></div>
+    <div class="proj-section"><div class="proj-section-label">Main results</div><div class="project-results"><div class="project-result"><strong>1.33</strong><span>Best mean rank across six benchmarks using the lowest-valued 1% of offline data.</span></div><div class="project-result"><strong>4 / 6</strong><span>Benchmarks on which OptBias achieved the highest reported candidate performance.</span></div></div><p class="project-result-note">Results from Table 1 of the AISTATS paper.</p></div>
+    <div class="proj-role"><p><strong>My role:</strong> I led the project: OptBias and Sim4Opt design, meta-learning implementation, optimization experiments, ablations, and writing.</p></div>
+    <div class="proof-row"><a class="proof-link" href="assets/optbias-paper.pdf" target="_blank" rel="noopener">Read paper PDF ↗</a></div>
+  </div>
+</article>
+<article class="project-item">
+  <figure class="project-figure">
+    <button type="button" class="project-image-button" aria-label="Enlarge figure for Discovery of Feasible 3D Printing Configurations for Metal Alloys via AI-Driven Adaptive Experimental Design" onclick="openLightbox('assets/beam-overview.webp')"><img src="assets/beam-overview.webp" alt="BEAM feedback loop connecting probabilistic modeling, parameter acquisition, printing, and quality analysis" loading="lazy"></button>
+    <figcaption>Figure 2 · BEAM laboratory feedback loop · Click to enlarge</figcaption>
+  </figure>
+  <div class="project-content">
+    <div><span class="project-tag">AAAI / IAAI 2026</span><span class="project-tag">Deployed AI</span></div>
+    <h3 class="project-title">Discovery of Feasible 3D Printing Configurations for Metal Alloys via AI-Driven Adaptive Experimental Design</h3>
+    <div class="proj-section"><div class="proj-section-label">Problem</div><p>Printing GRCop-42 at lower laser powers requires finding feasible settings among more than 100 million combinations for each power level; each lab trial consumes time and materials.</p></div>
+    <div class="proj-section"><div class="proj-section-label">Approach</div><p>BEAM combines a probabilistic feasibility model, an active-search acquisition strategy, and expert constraints to guide the next physical printing trials.</p></div>
+    <div class="proj-section"><div class="proj-section-label">Main results</div><div class="project-results"><div class="project-result"><strong>6</strong><span>Feasible configurations discovered across 950 W, 700 W, 600 W, and 500 W.</span></div><div class="project-result"><strong>≤ 10</strong><span>Trials to find a feasible setting at each tested power level.</span></div></div><p class="project-result-note">The lab’s 37 earlier manual trials found no feasible setting. BEAM found three at 600 W and one at each other power level (Table 1).</p></div>
+    <div class="proj-role"><p><strong>My role:</strong> I led the AI/ML work: formulation, surrogate and acquisition design, planning with materials-science collaborators, experimental analysis, and writing.</p></div>
+    <div class="proof-row"><a class="proof-link" href="assets/beam-paper.pdf" target="_blank" rel="noopener">Read paper PDF ↗</a></div>
+  </div>
+</article>
+<article class="project-item">
+  <figure class="project-figure">
+    <button type="button" class="project-image-button" aria-label="Enlarge figure for OptWear: AI-Driven Human-Centered Design of Wearable Health Systems" onclick="openLightbox('assets/optwear-overview.webp')"><img src="assets/optwear-overview.webp" alt="OptWear three-stage framework: multi-fidelity design search, high-fidelity validation, and human-feedback modeling" loading="lazy"></button>
+    <figcaption>Figure 1 · OptWear framework · Click to enlarge</figcaption>
+  </figure>
+  <div class="project-content">
+    <div><span class="project-tag">AAAI 2027 · Under review</span><span class="project-tag">Co-first author</span></div>
+    <h3 class="project-title">OptWear: AI-Driven Human-Centered Design of Wearable Health Systems</h3>
+    <div class="proj-section"><div class="proj-section-label">Problem</div><p>Wearable health systems must balance energy and latency while realistic hardware measurements and user evaluations are expensive.</p></div>
+    <div class="proj-section"><div class="proj-section-label">Approach</div><p>OptWear uses multi-objective, multi-fidelity search to find promising designs, validates selected designs on hardware, and explores how user feedback can inform later refinement.</p></div>
+    <div class="proj-section"><div class="proj-section-label">Main results</div><div class="project-results"><div class="project-result"><strong>85.2%</strong><span>Mean resource cost saved across five health applications versus single-fidelity search.</span></div><div class="project-result"><strong>0.49%</strong><span>Mean Pareto hypervolume loss in that cost comparison.</span></div></div><p class="project-result-note">The reported cost comparison uses lower and intermediate fidelities; a six-participant pilot collected user feedback. Preference-guided refinement is a future stage.</p></div>
+    <div class="proj-role"><p><strong>My role:</strong> I am a co-first author and led the AI/ML formulation, surrogate modeling, Bayesian optimization, experiments, and analysis alongside a wearable-systems co-lead.</p></div>
+    <div class="proof-row"><a class="proof-link" href="assets/optwear-manuscript.pdf" target="_blank" rel="noopener">Read paper PDF ↗</a></div>
+  </div>
+</article>
+<article class="project-item project-ongoing">
+  <div class="project-figure"><div class="project-img-placeholder" aria-hidden="true">🧪</div></div>
+  <div class="project-content"><span class="project-tag">Ongoing research</span><span class="project-tag">Constrained multi-objective BO</span>
+    <h3 class="project-title">Data-Efficient Discovery of PFAS-Capturing Materials via Constrained Multi-Objective Bayesian Optimization</h3>
+    <div class="proj-section"><div class="proj-section-label">Problem</div><p>PFAS material discovery must improve both uptake and selectivity while respecting synthesis feasibility and limited experimental capacity.</p></div>
+    <div class="proj-section"><div class="proj-section-label">Approach</div><p>I develop feasibility-aware multi-objective Bayesian optimization to prioritize promising candidates for physical evaluation.</p></div>
+    <div class="proj-role"><p><strong>My role:</strong> I lead computational optimization, including surrogates, candidate selection, and coordination with experimental collaborators.</p></div>
+  </div>
+</article>
   </section>
 
   <!-- ══ PUBLICATIONS ══ -->
@@ -740,8 +698,8 @@ body{font-size:17px;line-height:1.8;}
   <section class="card" id="experience">
     <h2 class="card-title">Experience</h2>
     <div class="exp-tab-btns">
-      <button class="exp-tab-btn active" onclick="showExp('research-exp',this)">🔬 Research Experience</button>
-      <button class="exp-tab-btn" onclick="showExp('teaching-exp',this)">🎓 Teaching Experience</button>
+      <button class="exp-tab-btn active" id="btn-research-exp" onclick="showExp('research-exp',this)">🔬 Research Experience</button>
+      <button class="exp-tab-btn" id="btn-teaching-exp" onclick="showExp('teaching-exp',this)">🎓 Teaching Experience</button>
     </div>
 
     <div class="exp-panel active" id="research-exp">
@@ -906,7 +864,7 @@ body{font-size:17px;line-height:1.8;}
 </footer>
 
 <script>
-function showTab(panelId,btn){
+function showExp(panelId,btn){
   document.querySelectorAll('.exp-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.exp-tab-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById(panelId).classList.add('active');
@@ -917,7 +875,7 @@ document.querySelectorAll('a[href="#research-exp"],a[href="#teaching-exp"]').for
     e.preventDefault();
     const id=this.getAttribute('href').slice(1);
     const btn=document.getElementById('btn-'+id);
-    if(btn)showTab(id,btn);
+    if(btn)showExp(id,btn);
     setTimeout(()=>document.getElementById('experience').scrollIntoView({behavior:'smooth'}),50);
   });
 });
