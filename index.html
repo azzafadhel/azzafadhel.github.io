@@ -8,13 +8,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
+  --nav-height:72px;
   --bg:#0f0d14; --surface:#1a1625; --surface2:#211c2f;
   --border:rgba(200,160,220,0.12);
   --accent:#c084fc; --accent2:#f0abfc; --accent3:#a78bfa;
   --text:#e8dff5; --muted:#9d8fba; --gold:#e9c46a; --green:#6ee7b7;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-height) + 1rem);}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
 body::before{content:'';position:fixed;inset:0;
   background:radial-gradient(ellipse 80% 60% at 20% 0%,rgba(192,132,252,.08) 0%,transparent 60%),
@@ -29,7 +30,7 @@ nav a:hover,nav a.active{color:var(--accent2);}
 .nav-cv:hover{background:rgba(192,132,252,.12);border-color:var(--accent)!important;}
 
 /* ══ HERO ══ */
-.hero{position:relative;z-index:1;min-height:auto;display:flex;align-items:center;padding:7.2rem 1.5rem 3.4rem;max-width:1280px;margin:0 auto;gap:4.2rem;}
+.hero{position:relative;z-index:1;min-height:auto;display:flex;align-items:center;padding:calc(var(--nav-height) + 2.4rem) 1.5rem 3.4rem;max-width:1280px;margin:0 auto;gap:4.2rem;}
 
 .hero-photo{flex-shrink:0;width:260px;height:260px;border-radius:50%;overflow:hidden;border:2px solid var(--accent);box-shadow:0 0 50px rgba(192,132,252,.32),0 0 90px rgba(192,132,252,.12);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:5rem;}
 .hero-photo img {
@@ -223,7 +224,7 @@ footer{position:relative;z-index:1;text-align:center;padding:1.5rem 2rem;border-
   .project-item{grid-template-columns:1fr;}
   .skills-2col{grid-template-columns:1fr;}
   .contact-card{flex-direction:column;align-items:flex-start;}
-  .hero{flex-direction:column;padding-top:6rem;gap:2rem;}
+  .hero{flex-direction:column;padding-top:calc(var(--nav-height) + 1.5rem);gap:2rem;}
   nav{gap:.7rem 1rem;padding:.75rem 1rem;}
   .page,.hero{padding-left:1.2rem;padding-right:1.2rem;}
 }
@@ -339,9 +340,10 @@ body{font-size:17px;line-height:1.8;}
 </nav>
 
 <!-- ════════════ HERO ════════════ -->
-<div class="hero-photo">
-  <img src="assets/Azza_photo_web.png" alt="Azza Fadhel">
-</div>
+<header class="hero">
+  <div class="hero-photo">
+    <img src="assets/Azza_photo_web.png" alt="Azza Fadhel">
+  </div>
   <div class="hero-text">
     <div class="hero-subtitle">Ph.D. Candidate in Computer Science</div>
     <h1>Azza <em>Fadhel</em></h1>
@@ -844,6 +846,13 @@ body{font-size:17px;line-height:1.8;}
 </footer>
 
 <script>
+const nav=document.querySelector('nav');
+function updateNavHeight(){
+  document.documentElement.style.setProperty('--nav-height',`${nav.offsetHeight}px`);
+}
+updateNavHeight();
+window.addEventListener('resize',updateNavHeight);
+
 function showExp(panelId,btn){
   document.querySelectorAll('.exp-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.exp-tab-btn').forEach(b=>b.classList.remove('active'));
