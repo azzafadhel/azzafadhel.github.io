@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Azza Fadhel | Machine Learning Researcher</title>
+<meta content="Azza Fadhel is a Ph.D. candidate in Computer Science at Washington State University working on Bayesian optimization, offline optimization, and AI for scientific discovery." name="description"/>
+<!-- LinkedIn / Open Graph preview -->
+<meta content="Azza Fadhel | Machine Learning Researcher" property="og:title"/>
+<meta content="Research in Bayesian optimization, offline optimization, adaptive experimental design, and AI for scientific discovery." property="og:description"/>
+<meta content="https://azzafadhel.github.io/assets/linkedin-preview.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="627" property="og:image:height"/>
+<meta content="https://azzafadhel.github.io/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+
+:root {
+  --nav-height:72px;
+  --bg:#100E16;
+  --surface:#1A1624;
+  --surface2:#211A2D;
+  --border:#30263F;
+  --accent:#C88AD8;
+  --accent2:#E1B3EA;
+  --accent3:#9A5FAF;
+  --text:#F2EAF5;
+  --muted:#B7A8C5;
+  --gold:#E7C46A;
+  --green:#78DDB7;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-height) + 1rem);}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 20% 0%,rgba(200,138,216,.08) 0%,transparent 60%),
+             radial-gradient(ellipse 60% 50% at 80% 100%,rgba(154,95,175,.06) 0%,transparent 60%);
+  pointer-events:none;z-index:0;}
+
+/* ══ NAV ══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:center;flex-wrap:nowrap;gap:.55rem .95rem;padding:.72rem 1rem;background:rgba(16,14,22,.90);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+nav a{color:var(--muted);text-decoration:none;font-size:.79rem;letter-spacing:.065em;text-transform:uppercase;font-weight:500;transition:color .2s;white-space:nowrap;}
+nav a:hover,nav a.active{color:var(--accent2);}
+.nav-cv{color:var(--accent2)!important;border:1px solid rgba(200,138,216,.35);padding:.22rem .8rem;border-radius:999px;}
+.nav-cv:hover{background:rgba(200,138,216,.12);border-color:var(--accent)!important;}
+
+/* ══ HERO ══ */
+.hero{position:relative;z-index:1;min-height:auto;display:flex;align-items:center;padding:calc(var(--nav-height) + 2.4rem) 1.5rem 3.4rem;max-width:1440px;margin:0 auto;gap:4.2rem;}
+
+.hero-photo{flex-shrink:0;width:260px;height:260px;border-radius:50%;overflow:hidden;border:2px solid var(--accent);box-shadow:0 0 50px rgba(200,138,216,.32),0 0 90px rgba(200,138,216,.12);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:5rem;}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: none;
+}
+.hero-text h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.8rem,7vw,6.2rem);font-weight:300;letter-spacing:-.02em;line-height:1.02;margin-bottom:.7rem;}
+.hero-text h1 em{font-style:italic;color:var(--accent2);}
+.hero-subtitle{font-size:1.05rem;color:var(--accent);letter-spacing:.09em;text-transform:uppercase;margin-bottom:.35rem;font-weight:500;}
+.hero-location{font-size:.95rem;color:var(--muted);margin-bottom:1.2rem;}
+.hero-links{display:flex;gap:.65rem;flex-wrap:wrap;margin-bottom:.9rem;}
+.hero-links a{display:flex;align-items:center;justify-content:center;width:2.65rem;height:2.65rem;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--accent);text-decoration:none;transition:all .2s;}
+.hero-links a:hover{border-color:var(--accent);background:rgba(200,138,216,.1);transform:translateY(-2px);}
+.cv-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.45rem;border-radius:999px;background:linear-gradient(135deg,rgba(200,138,216,.18),rgba(154,95,175,.12));border:1px solid rgba(200,138,216,.4);color:var(--accent2);text-decoration:none;font-size:.86rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;transition:all .2s;}
+.cv-btn:hover{background:rgba(200,138,216,.22);border-color:var(--accent);transform:translateY(-1px);box-shadow:0 4px 20px rgba(200,138,216,.18);}
+.update-badge{font-size:.78rem;color:var(--muted);font-style:italic;display:block;margin-top:.65rem;}
+
+/* ══ PAGE ══ */
+.page{position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:0 1.5rem 5rem;display:flex;flex-direction:column;gap:2rem;}
+
+/* ══ ABOUT + EDUCATION ROW ══ */
+.about-edu-row{display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:stretch;}
+.about-edu-row .card{height:100%;}
+
+/* ══ CARDS ══ */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2.2rem;transition:border-color .2s;}
+.card:hover{border-color:rgba(200,138,216,.22);}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--text);margin-bottom:1.2rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.5rem;}
+.card-title::before{content:'';display:inline-block;width:3px;height:1.1em;background:linear-gradient(to bottom,var(--accent),var(--accent3));border-radius:2px;}
+
+/* ══ ABOUT ══ */
+.about-text p{color:var(--text);margin-bottom:1rem;font-size:.92rem;}
+.about-text p:last-child{margin-bottom:0;}
+.about-text a{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(200,138,216,.3);text-underline-offset:3px;transition:color .2s;}
+.about-text a:hover{color:var(--accent2);}
+.section-sub{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);font-weight:500;margin:1.3rem 0 .55rem;padding-bottom:.3rem;border-bottom:1px solid var(--border);}
+.research-list{list-style:none;margin-top:.3rem;}
+.research-list li{padding:.28rem 0 .28rem 1.2rem;position:relative;font-size:.87rem;color:var(--text);}
+.research-list li::before{content:'◆';position:absolute;left:0;color:var(--accent);font-size:.44rem;top:.65rem;}
+
+/* ══ EDUCATION ══ */
+.edu-entry{padding:.85rem 0;border-bottom:1px solid var(--border);}
+.edu-entry:last-child{border-bottom:none;padding-bottom:0;}
+.edu-entry:first-child{padding-top:0;}
+.edu-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.18rem;}
+.edu-years{font-size:.76rem;color:var(--accent3);white-space:nowrap;padding-top:.1rem;}
+.edu-degree-name{font-weight:600;font-size:.95rem;color:var(--text);line-height:1.3;}
+.edu-institution{font-size:.82rem;color:var(--muted);margin:.14rem 0 .04rem;}
+.edu-location{font-size:.76rem;color:var(--muted);font-style:italic;}
+.edu-detail{font-size:.78rem;color:var(--muted);margin-top:.18rem;line-height:1.45;}
+.edu-detail strong{color:var(--accent3);font-weight:600;}
+.edu-gpa{display:inline-block;margin-top:.35rem;font-size:.72rem;padding:.13rem .6rem;border-radius:999px;background:rgba(200,138,216,.1);border:1px solid rgba(200,138,216,.2);color:var(--accent2);}
+
+/* ══ PROOF ATTACHMENTS ══ */
+.proof-row{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.55rem;}
+.proof-link{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;padding:.18rem .6rem;border-radius:6px;background:rgba(200,138,216,.08);border:1px solid rgba(200,138,216,.2);color:var(--accent2);text-decoration:none;transition:all .2s;}
+.proof-link:hover{background:rgba(200,138,216,.18);border-color:var(--accent);}
+.proof-img-thumb{width:64px;height:64px;border-radius:8px;object-fit:cover;border:1px solid var(--border);cursor:pointer;transition:transform .2s,border-color .2s;}
+.proof-img-thumb:hover{transform:scale(1.06);border-color:var(--accent);}
+
+.proof-link:focus-visible,.contact-btn:focus-visible,.hero-links a:focus-visible,.cv-btn:focus-visible,.nav-cv:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+
+/* ══ LIGHTBOX ══ */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:999;align-items:center;justify-content:center;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:90vw;max-height:90vh;border-radius:12px;}
+.lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:2rem;color:var(--muted);cursor:pointer;line-height:1;}
+.lightbox-close:hover{color:var(--text);}
+
+/* ══ PROJECTS ══ */
+.project-item{display:grid;grid-template-columns:280px 1fr;gap:1.4rem;padding:1.6rem 0;border-bottom:1px solid var(--border);}
+.project-item:last-child{border-bottom:none;padding-bottom:0;}
+.project-item:first-child{padding-top:0;}
+.project-img{border-radius:10px;overflow:hidden;background:#ffffff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:.55rem;}
+.project-img-placeholder{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--surface2) 0%,rgba(200,138,216,.1) 100%);font-size:2.5rem;}
+.project-img img{width:100%;height:auto;display:block;object-fit:contain;aspect-ratio:4/3;border-radius:6px;background:#fff;}
+.project-tag{display:inline-block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .55rem;border-radius:999px;background:rgba(200,138,216,.12);border:1px solid rgba(200,138,216,.2);color:var(--accent2);margin-bottom:.5rem;margin-right:.3rem;}
+.project-title{font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--text);margin-bottom:.6rem;line-height:1.3;}
+.project-desc{font-size:.83rem;color:var(--muted);line-height:1.7;}
+.project-desc a{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(200,138,216,.3);text-underline-offset:3px;transition:color .2s;}
+.project-desc a:hover{color:var(--accent2);}
+
+/* Project subsections */
+.proj-section{margin-top:.65rem;}
+.proj-section-label{font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:.22rem;}
+.proj-section p{font-size:.83rem;color:var(--muted);line-height:1.7;margin:0;}
+.proj-role{margin-top:.75rem;padding:.6rem .85rem;border-radius:8px;background:rgba(200,138,216,.06);border-left:2px solid var(--accent3);}
+.proj-role p{font-size:.8rem;color:var(--muted);line-height:1.65;margin:0;}
+.proj-role strong{color:var(--accent2);font-weight:500;}
+
+/* ══ PUBLICATIONS ══ */
+.pub-item{padding:.85rem 0;border-bottom:1px solid var(--border);display:flex;gap:.6rem;}
+.pub-item:last-child{border-bottom:none;padding-bottom:0;}
+.pub-item:first-child{padding-top:0;}
+.pub-icon{flex-shrink:0;font-size:.8rem;margin-top:.15rem;color:var(--accent);}
+.pub-title{font-size:.88rem;color:var(--accent);text-decoration:underline;text-decoration-color:rgba(200,138,216,.3);text-underline-offset:3px;display:block;margin-bottom:.12rem;font-weight:400;transition:color .2s;line-height:1.4;}
+.pub-title:hover{color:var(--accent2);}
+.pub-authors{font-size:.76rem;color:var(--muted);margin-bottom:.08rem;}
+.pub-authors strong{color:var(--accent2);font-weight:500;}
+.pub-venue{font-size:.74rem;color:var(--muted);font-style:italic;}
+
+/* ══ SKILLS ══ */
+.skills-2col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.skill-group-title{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);font-weight:500;margin-bottom:.45rem;}
+.skills-grid{display:flex;flex-wrap:wrap;gap:.38rem;margin-bottom:1.1rem;}
+.skill-pill{font-size:.71rem;padding:.2rem .6rem;border-radius:999px;border:1px solid var(--border);background:var(--surface2);color:var(--muted);}
+
+/* ══ NEWS ══ */
+.news-item{padding:.85rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:110px 1fr;gap:1rem;}
+.news-item:last-child{border-bottom:none;}
+.news-date{font-size:.79rem;color:var(--accent);font-weight:500;padding-top:.1rem;}
+.news-text{font-size:.86rem;color:var(--text);}
+.news-text ul{margin-top:.35rem;padding-left:1.1rem;}
+.news-text li{margin-bottom:.2rem;color:var(--muted);font-size:.82rem;}
+
+/* ══ AWARDS ══ */
+.award-item{padding:.82rem 0;border-bottom:1px solid var(--border);}
+.award-item:last-child{border-bottom:none;}
+.award-row{display:flex;align-items:flex-start;gap:.6rem;}
+.award-icon{color:var(--gold);font-size:.92rem;flex-shrink:0;margin-top:.1rem;}
+.award-name{font-size:.87rem;font-weight:500;color:var(--text);line-height:1.4;}
+.award-org{font-size:.76rem;color:var(--muted);font-style:italic;}
+.award-year{margin-left:auto;font-size:.76rem;color:var(--muted);flex-shrink:0;padding-left:.5rem;white-space:nowrap;}
+
+/* ══ EXPERIENCE (tabbed) ══ */
+.exp-tab-btns{display:flex;gap:.5rem;margin-bottom:1.4rem;flex-wrap:wrap;}
+.exp-tab-btn{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.33rem .95rem;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.exp-tab-btn.active{background:rgba(200,138,216,.15);border-color:rgba(200,138,216,.4);color:var(--accent2);}
+.exp-tab-btn:hover:not(.active){border-color:rgba(200,138,216,.25);color:var(--text);}
+.exp-panel{display:none;}
+.exp-panel.active{display:block;}
+.exp-item{padding:1.05rem 0;border-bottom:1px dashed var(--border);}
+.exp-item:last-child{border-bottom:none;padding-bottom:0;}
+.exp-item:first-child{padding-top:0;}
+.exp-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:.45rem;}
+.exp-dot.teach{background:var(--accent2);}
+.exp-title{font-weight:500;font-size:.91rem;color:var(--text);}
+.exp-date{font-size:.78rem;color:var(--accent3);margin-left:.3rem;font-weight:300;}
+.exp-org{font-size:.8rem;color:var(--muted);margin:.1rem 0 .35rem 1.2rem;}
+.exp-desc{font-size:.85rem;color:var(--text);margin-left:1.2rem;margin-bottom:.3rem;}
+.course-list{margin-left:1.2rem;list-style:none;margin-top:.38rem;}
+.course-item{font-size:.8rem;color:var(--muted);display:flex;align-items:baseline;gap:.4rem;padding:.16rem 0;}
+.course-icon{color:var(--accent3);font-size:.7rem;}
+.course-code{color:var(--text);font-weight:500;}
+.course-seasons{color:var(--accent2);font-size:.76rem;}
+
+/* ══ CERTIFICATIONS ══ */
+.cert-item{padding:.85rem 0;border-bottom:1px solid var(--border);}
+.cert-item:last-child{border-bottom:none;}
+.cert-row{display:flex;align-items:flex-start;gap:.6rem;}
+.cert-icon{color:var(--green);font-size:.92rem;flex-shrink:0;margin-top:.1rem;}
+.cert-name{font-size:.87rem;font-weight:500;color:var(--text);}
+.cert-issuer{font-size:.76rem;color:var(--muted);font-style:italic;}
+.cert-year{margin-left:auto;font-size:.76rem;color:var(--muted);flex-shrink:0;padding-left:.5rem;white-space:nowrap;}
+
+/* ══ SERVICE ══ */
+.service-section{margin-bottom:1.1rem;}
+.service-section:last-child{margin-bottom:0;}
+.service-subtitle{font-size:.71rem;letter-spacing:.11em;text-transform:uppercase;color:var(--accent2);font-weight:500;margin-bottom:.5rem;}
+.service-list{list-style:none;counter-reset:svc;}
+.service-list li{font-size:.83rem;color:var(--text);padding:.2rem 0;display:flex;gap:.38rem;}
+.service-list li::before{counter-increment:svc;content:counter(svc)'.';color:var(--muted);font-size:.76rem;min-width:1.3rem;}
+.service-list li span{color:var(--accent);margin-left:.2rem;}
+
+/* ══ CONTACT ══ */
+.contact-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;transition:border-color .2s;}
+.contact-card:hover{border-color:rgba(200,138,216,.3);}
+.contact-label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:.45rem;}
+.contact-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--text);line-height:1.1;margin-bottom:.6rem;}
+.contact-sub{font-size:.85rem;color:var(--muted);max-width:480px;line-height:1.6;}
+.contact-btns{display:flex;gap:.8rem;flex-shrink:0;flex-wrap:wrap;}
+.contact-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.62rem 1.35rem;border-radius:999px;font-size:.82rem;font-weight:500;text-decoration:none;transition:all .2s;white-space:nowrap;font-family:'DM Sans',sans-serif;}
+.contact-btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent3));color:var(--bg);}
+.contact-btn-primary:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 6px 24px rgba(200,138,216,.35);}
+.contact-btn-secondary{background:var(--surface2);border:1px solid var(--border);color:var(--text);}
+.contact-btn-secondary:hover{border-color:rgba(200,138,216,.35);color:var(--accent2);transform:translateY(-1px);}
+
+/* ══ FOOTER ══ */
+footer{position:relative;z-index:1;text-align:center;padding:1.5rem 2rem;border-top:1px solid var(--border);color:var(--muted);font-size:.75rem;font-style:italic;}
+
+/* ══ ANIMATIONS ══ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.hero{animation:fadeUp .8s ease both;}
+.card,.contact-card{animation:fadeUp .6s ease both;}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:900px){
+  .about-edu-row{grid-template-columns:1fr;}
+  .project-item{grid-template-columns:1fr;}
+  .skills-2col{grid-template-columns:1fr;}
+  .contact-card{flex-direction:column;align-items:flex-start;}
+  .hero{flex-direction:column;padding-top:calc(var(--nav-height) + 1.5rem);gap:2rem;}
+  nav{gap:.7rem 1rem;padding:.75rem 1rem;}
+  .page,.hero{padding-left:1.2rem;padding-right:1.2rem;}
+}
+
+/* ══ READABILITY ══ */
+body{font-size:17px;line-height:1.8;}
+
+.card-title{font-size:2rem;}
+
+.about-text p,
+.project-desc,
+.proj-section p,
+.proj-role p,
+.news-text,
+.exp-desc,
+.contact-sub{font-size:1.05rem;line-height:1.85;}
+
+.research-list li,
+.service-list li,
+.news-text li,
+.course-item{font-size:1rem;line-height:1.75;}
+
+.section-sub,
+.skill-group-title,
+.service-subtitle,
+.contact-label{font-size:.82rem;}
+
+.skill-pill{font-size:.92rem;padding:.34rem .82rem;}
+
+.news-item{grid-template-columns:130px 1fr;gap:1.4rem;padding:1.15rem 0;}
+.news-date{font-size:.95rem;}
+
+.pub-title{font-size:1.05rem;}
+.pub-authors{font-size:.95rem;}
+.pub-venue{font-size:.92rem;}
+
+.award-name,.cert-name,.exp-title{font-size:1.03rem;}
+.award-org,.cert-issuer,.exp-org{font-size:.92rem;}
+.award-year,.cert-year,.exp-date{font-size:.9rem;}
+
+.edu-degree-name{font-size:1.03rem;}
+.edu-years{font-size:.9rem;}
+.edu-institution{font-size:.94rem;}
+.edu-location{font-size:.88rem;}
+.edu-detail{font-size:.9rem;}
+.edu-gpa{font-size:.82rem;}
+
+.project-title{font-size:1.35rem;}
+.project-tag{font-size:.82rem;}
+.proj-section-label{font-size:.78rem;}
+
+.card{padding:2.4rem;}
+
+.hero-text h1{font-size:clamp(3rem,5.4vw,4.6rem);line-height:1.05;margin-bottom:.7rem;}
+.hero-subtitle{font-size:1rem;}
+.hero-location{font-size:.98rem;}
+.hero-photo{width:240px;height:240px;}
+
+@media(max-width:800px){
+  body{font-size:16px;}
+  nav a{font-size:.78rem;}
+  .card{padding:1.5rem;}
+  .card-title{font-size:1.7rem;}
+  .news-item{grid-template-columns:1fr;gap:.35rem;}
+  .hero-text h1{font-size:clamp(2.6rem,12vw,3.8rem);}
+  .hero-photo{width:210px;height:210px;}
+}
+
+/* Updated project content within the original portfolio design */
+.profile-initials{font-family:'Cormorant Garamond',serif;color:var(--accent2);font-size:5rem;line-height:1;}
+#projects .project-item{display:grid;grid-template-columns:minmax(340px,40%) minmax(0,1fr);gap:2rem;align-items:start;}
+#projects .project-figure{margin:0;min-width:0;width:100%;align-self:start;}
+#projects .project-content{min-width:0;align-self:start;}
+#projects .project-image-button{display:flex;align-items:center;justify-content:center;width:100%;height:300px;padding:1rem;border-radius:10px;border:1px solid var(--border);background:#fff;cursor:zoom-in;overflow:hidden;}
+#projects .project-image-button img{display:block;width:100%;height:100%;max-height:none;object-fit:contain;}
+#projects .project-image-button.match-opt-poster img{object-fit:contain;object-position:center;}
+#projects .project-img-placeholder{width:100%;height:300px;aspect-ratio:auto;border-radius:10px;border:1px solid var(--border);background:linear-gradient(135deg,var(--surface2) 0%,rgba(200,138,216,.12) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.65rem;color:var(--accent2);}
+#projects .project-placeholder-icon{font-size:3rem;line-height:1;}
+#projects .project-placeholder-label{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500;}
+#projects .project-figure figcaption{color:var(--muted);font-size:.78rem;margin-top:.45rem;line-height:1.5;}
+#projects .project-title{font-size:1.55rem;line-height:1.28;margin:.35rem 0 .65rem;overflow-wrap:normal;word-break:normal;}
+#projects .project-tag{white-space:normal;line-height:1.35;max-width:100%;vertical-align:top;}
+#projects .project-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;margin:.5rem 0;}
+#projects .project-result{background:var(--surface2);border:1px solid var(--border);padding:.8rem;border-radius:9px;}
+#projects .project-result strong{display:block;color:var(--gold);font-family:'DM Sans',sans-serif;font-size:1.55rem;line-height:1.1;margin-bottom:.35rem;}
+#projects .project-result span,#projects .project-result-note{font-size:.85rem;line-height:1.55;color:var(--muted);}
+#projects .project-result-note{margin:.45rem 0;}
+#projects .proof-row{margin-top:.8rem;}
+#projects .proof-link{display:inline-flex;align-items:center;color:var(--accent2);font-size:.9rem;font-weight:500;text-decoration:underline;text-underline-offset:4px;}
+#projects .project-image-button:focus-visible,.proof-link:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+
+/* Cleaner publication list: no document/emoji icons */
+#publications .pub-item{display:block;padding-left:0;}
+#publications .pub-icon{display:none;}
+
+/* Research experience bullets */
+.exp-bullets{margin:.55rem 0 0 1.2rem;padding-left:1.15rem;}
+.exp-bullets li{font-size:1.02rem;color:var(--text);line-height:1.72;margin:.42rem 0;}
+.exp-bullets li::marker{color:var(--accent3);}
+
+/* Credential links */
+.cert-links{margin-top:.45rem;}
+
+@media(max-width:1200px){
+  nav{gap:.45rem .72rem;}
+  nav a{font-size:.72rem;letter-spacing:.05em;}
+  #projects .project-item{grid-template-columns:minmax(300px,38%) minmax(0,1fr);gap:1.6rem;}
+}
+@media(max-width:900px){
+  nav{justify-content:flex-start;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  nav::-webkit-scrollbar{display:none;}
+  #projects .project-item{grid-template-columns:1fr;}
+  #projects .project-figure{max-width:720px;width:100%;}
+  #projects .project-image-button,#projects .project-img-placeholder{height:280px;}
+}
+@media(max-width:550px){
+  #projects .project-results{grid-template-columns:1fr;}
+  #projects .project-image-button,#projects .project-img-placeholder{height:210px;}
+}
+
+
+
+/* ===== Recruiter-facing refinement ===== */
+.hero{justify-content:center;}
+.opportunity-banner{display:inline-flex;align-items:center;gap:.55rem;flex-wrap:wrap;margin:.15rem 0 1rem;padding:.5rem .85rem;border:1px solid rgba(200,138,216,.28);border-radius:999px;background:rgba(200,138,216,.07);color:var(--text);font-size:.86rem;line-height:1.4;}
+.opportunity-banner span{color:var(--accent2);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;}
+
+/* Center education entries and make the national ranking self-explanatory */
+#education .edu-entry{text-align:center;}
+#education .edu-header{flex-direction:column;align-items:center;justify-content:center;gap:.12rem;}
+#education .edu-years{margin:0;padding-top:0;}
+#education .edu-institution,#education .edu-location,#education .edu-detail{text-align:center;}
+#education .edu-gpa{margin-left:auto;margin-right:auto;}
+
+/* Projects: one consistent visual frontier and compact impact-first results */
+#projects .project-item{grid-template-columns:minmax(400px,41%) minmax(0,1fr);gap:2rem;align-items:start;padding:2rem 0;}
+#projects .project-figure,#projects .project-content{align-self:start;min-width:0;}
+#projects .project-image-button,#projects .project-schematic{width:100%;height:340px;border-radius:12px;border:1px solid var(--border);overflow:hidden;}
+#projects .project-image-button{display:flex;align-items:center;justify-content:center;padding:.8rem;background:var(--surface2);}
+#projects .project-image-button img{display:block;width:100%;height:100%;object-fit:contain;background:#fff;border-radius:8px;}
+#projects .project-figure figcaption{margin-top:.55rem;text-align:center;font-size:.76rem;}
+#projects .project-tag{text-transform:none;letter-spacing:.045em;font-size:.76rem;padding:.22rem .62rem;}
+#projects .project-title{margin-top:.45rem;}
+#projects .project-results{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin:.55rem 0 .35rem;}
+#projects .project-result{min-height:112px;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:.9rem 1rem;border-radius:11px;}
+#projects .project-result strong{font-size:1.65rem;margin-bottom:.35rem;}
+#projects .project-result span{font-size:.82rem;line-height:1.45;}
+#projects .project-result-note{text-align:center;font-size:.8rem;line-height:1.45;margin:.45rem 0 0;}
+
+/* Compact custom schematics for projects where a paper figure is unavailable or too dense */
+#projects .project-schematic{display:flex;flex-direction:column;justify-content:center;padding:1.15rem;background:linear-gradient(145deg,var(--surface2),rgba(200,138,216,.08));}
+#projects .schematic-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:.55rem;}
+#projects .schematic-node{min-height:112px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:.75rem;border:1px solid rgba(200,138,216,.28);border-radius:12px;background:rgba(16,14,22,.55);}
+#projects .schematic-node strong{color:var(--accent2);font-size:.92rem;font-weight:600;line-height:1.3;}
+#projects .schematic-node span{margin-top:.28rem;color:var(--muted);font-size:.73rem;line-height:1.35;}
+#projects .schematic-arrow{color:var(--gold);font-size:1.45rem;font-weight:600;text-align:center;}
+#projects .schematic-footer{margin-top:1rem;text-align:center;color:var(--muted);font-size:.78rem;line-height:1.4;}
+
+/* Slightly tighter, fully visible desktop navigation */
+nav{gap:.42rem .62rem;padding:.7rem .75rem;overflow-x:auto;scrollbar-width:none;}
+nav::-webkit-scrollbar{display:none;}
+nav a{font-size:.7rem;letter-spacing:.04em;}
+
+@media(max-width:1200px){
+  #projects .project-item{grid-template-columns:minmax(330px,39%) minmax(0,1fr);gap:1.5rem;}
+  #projects .project-image-button,#projects .project-schematic{height:310px;}
+  nav{justify-content:flex-start;}
+}
+@media(max-width:900px){
+  .opportunity-banner{border-radius:14px;justify-content:center;text-align:center;}
+  #projects .project-item{grid-template-columns:1fr;}
+  #projects .project-image-button,#projects .project-schematic{height:300px;}
+}
+@media(max-width:600px){
+  #projects .project-results{grid-template-columns:1fr;}
+  #projects .project-image-button,#projects .project-schematic{height:auto;min-height:230px;}
+  #projects .schematic-flow{grid-template-columns:1fr;}
+  #projects .schematic-arrow{transform:rotate(90deg);}
+}
+\n/* ══ FINAL REFINEMENTS: centered hero, synchronized About/Education, aligned projects ══ */
+.hero{
+  max-width:1100px;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  gap:1.35rem;
+  padding-top:calc(var(--nav-height) + 2.2rem);
+  padding-bottom:3rem;
+}
+.hero-photo{width:245px;height:245px;}
+.hero-text{width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;}
+.hero-location{text-align:center;}
+.hero-links{justify-content:center;}
+.opportunity-banner{
+  width:min(900px,100%);
+  margin:.8rem auto 1rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:.24rem;
+  text-align:center;
+}
+.opportunity-banner .opportunity-roles{color:var(--text);line-height:1.55;}
+
+/* About stays left, Education stays right; both cards share the same top and bottom frontier. */
+.about-edu-row{grid-template-columns:1fr 1fr;align-items:stretch;}
+.about-edu-row > .card{height:100%;}
+#about,#education{display:flex;flex-direction:column;height:100%;}
+#education .edu-entry{text-align:left;}
+#education .edu-header{flex-direction:row;align-items:flex-start;justify-content:space-between;gap:1rem;}
+#education .edu-years{margin-left:auto;padding-top:.1rem;text-align:right;}
+#education .edu-institution,#education .edu-location,#education .edu-detail{text-align:left;}
+#education .edu-gpa{margin-left:0;margin-right:0;}
+
+/* Every project uses the same left visual boundary and figure height. */
+#projects .project-item{
+  grid-template-columns:minmax(390px,42%) minmax(0,1fr);
+  gap:2rem;
+  align-items:start;
+}
+#projects .project-figure{display:flex;flex-direction:column;min-width:0;margin:0;}
+#projects .project-content{min-width:0;padding-top:0;}
+#projects .project-image-button,#projects .project-schematic{
+  width:100%;
+  height:325px;
+  min-height:325px;
+}
+#projects .project-figure figcaption{
+  min-height:1.25rem;
+  margin-top:.5rem;
+  text-align:left;
+}
+
+/* Compact impact cards: large metric + plain-English meaning, without oversized empty boxes. */
+#projects .project-results{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.72rem;
+  margin:.55rem 0 .35rem;
+}
+#projects .project-result{
+  min-height:0;
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  align-items:center;
+  gap:.8rem;
+  text-align:left;
+  padding:.72rem .85rem;
+  border-left:3px solid rgba(200,138,216,.55);
+}
+#projects .project-result strong{
+  margin:0;
+  font-size:1.32rem;
+  line-height:1.15;
+  white-space:nowrap;
+}
+#projects .project-result span{
+  font-size:.8rem;
+  line-height:1.42;
+}
+#projects .project-result-note{
+  margin:.4rem 0 0;
+  text-align:left;
+  font-size:.78rem;
+  line-height:1.45;
+}
+
+@media(max-width:1000px){
+  .about-edu-row{grid-template-columns:1fr;}
+  #projects .project-item{grid-template-columns:1fr;}
+  #projects .project-image-button,#projects .project-schematic{height:300px;min-height:300px;}
+}
+@media(max-width:600px){
+  .hero-photo{width:210px;height:210px;}
+  .opportunity-banner{padding:.75rem .9rem;}
+  #education .edu-header{flex-direction:column;gap:.12rem;}
+  #education .edu-years{margin-left:0;text-align:left;}
+  #projects .project-results{grid-template-columns:1fr;}
+  #projects .project-result{grid-template-columns:1fr;gap:.25rem;}
+  #projects .project-result strong{white-space:normal;}
+  #projects .project-image-button,#projects .project-schematic{height:auto;min-height:230px;}
+}
+
+
+/* ══ FINAL HERO + PROJECT ALIGNMENT REFINEMENTS ══ */
+.hero{
+  max-width:1240px;
+  margin:0 auto;
+  justify-content:center;
+  gap:4.25rem;
+  padding-left:2rem;
+  padding-right:2rem;
+}
+.hero-photo{
+  width:285px;
+  height:285px;
+  flex:0 0 285px;
+}
+.hero-text{
+  width:auto;
+  flex:0 1 820px;
+  max-width:820px;
+  align-items:center;
+  text-align:center;
+}
+.hero-location{margin-bottom:.55rem;}
+.hero-opportunity{
+  margin:.15rem auto 1rem;
+  max-width:790px;
+  color:var(--muted);
+  font-size:.94rem;
+  line-height:1.55;
+  text-align:center;
+}
+.hero-opportunity strong{color:var(--accent2);font-weight:600;}
+
+#projects .project-item{
+  grid-template-columns:minmax(390px,41%) minmax(0,1fr);
+  gap:2.2rem;
+  align-items:start;
+  padding:2rem 0;
+}
+#projects .project-figure,
+#projects .project-content{align-self:start;min-width:0;margin:0;}
+#projects .project-image-button,
+#projects .project-cover{
+  width:100%;
+  height:320px;
+  min-height:320px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+#projects .project-image-button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:.85rem;
+  background:#fff;
+  cursor:zoom-in;
+}
+#projects .project-image-button img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  background:#fff;
+  border-radius:7px;
+}
+#projects .project-figure figcaption{
+  margin-top:.5rem;
+  min-height:1.3rem;
+  text-align:left;
+  font-size:.76rem;
+  color:var(--muted);
+}
+.project-cover{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:2.2rem;
+  background:linear-gradient(145deg,var(--surface2),rgba(200,138,216,.08));
+}
+.project-cover-kicker{color:var(--accent);font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;font-weight:600;margin-bottom:.55rem;}
+.project-cover-title{font-family:'Cormorant Garamond',serif;color:var(--text);font-size:3rem;line-height:1;font-weight:600;margin-bottom:.75rem;}
+.project-cover-sub{max-width:360px;color:var(--muted);font-size:.9rem;line-height:1.6;}
+
+@media(max-width:900px){
+  .hero{flex-direction:column;gap:1.5rem;max-width:760px;}
+  .hero-photo{width:220px;height:220px;flex-basis:220px;}
+  .hero-text{max-width:100%;}
+  #projects .project-item{grid-template-columns:1fr;gap:1.2rem;}
+  #projects .project-image-button,#projects .project-cover{height:300px;min-height:300px;}
+}
+@media(max-width:550px){
+  .hero{padding-left:1rem;padding-right:1rem;}
+  .hero-opportunity{font-size:.86rem;}
+  #projects .project-image-button,#projects .project-cover{height:240px;min-height:240px;}
+}
+
+
+/* ══ PROJECT COLUMN ALIGNMENT: visual and explanation share the same top/bottom lines ══ */
+#projects .project-item{
+  align-items:stretch;
+}
+#projects .project-figure,
+#projects .project-content{
+  align-self:stretch;
+  height:auto;
+}
+#projects .project-figure{
+  display:flex;
+  flex-direction:column;
+}
+#projects .project-content{
+  display:flex;
+  flex-direction:column;
+}
+#projects .project-image-button,
+#projects .project-cover,
+#projects .project-icon-cover{
+  flex:1 1 auto;
+  height:auto;
+  min-height:320px;
+}
+#projects .project-image-button{
+  background:var(--surface2);
+}
+#projects .project-image-button img{
+  width:100%;
+  height:auto;
+  max-height:360px;
+  object-fit:contain;
+  object-position:center;
+  background:#fff;
+}
+#projects .project-figure figcaption{
+  flex:0 0 auto;
+  margin-top:.55rem;
+}
+.project-icon-cover{
+  width:100%;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:linear-gradient(145deg,var(--surface2),rgba(200,138,216,.055));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+.project-icon{
+  font-size:5.4rem;
+  line-height:1;
+  filter:saturate(.82);
+}
+#projects .proof-row{
+  margin-top:auto;
+  padding-top:.8rem;
+}
+@media(max-width:900px){
+  #projects .project-figure,
+  #projects .project-content{height:auto;}
+  #projects .project-image-button,
+  #projects .project-cover,
+  #projects .project-icon-cover{min-height:280px;}
+  #projects .proof-row{margin-top:.8rem;padding-top:0;}
+}
+@media(max-width:550px){
+  #projects .project-image-button,
+  #projects .project-cover,
+  #projects .project-icon-cover{min-height:220px;}
+  .project-icon{font-size:4.4rem;}
+}
+
+</style>
+</head>
+<body>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<span class="lightbox-close" onclick="closeLightbox()">✕</span>
+<img alt="" id="lightbox-img" src=""/>
+</div>
+<!-- ════════════ NAV ════════════ -->
+<nav>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#projects">Projects</a>
+<a href="#publications">Publications</a>
+<a href="#skills">Skills</a>
+<a href="#news">News</a>
+<a href="#awards">Awards</a>
+<a href="#research-exp">Research Exp.</a>
+<a href="#teaching-exp">Teaching Exp.</a>
+<a href="#service">Service</a>
+<a href="#certifications">Prof. Dev.</a>
+<a href="#contact">Contact</a>
+<a class="nav-cv" download="" href="assets/azza-fadhel-cv.pdf">↓ CV</a>
+</nav>
+<!-- ════════════ HERO ════════════ -->
+<header class="hero">
+<div class="hero-photo">
+<img alt="Azza Fadhel" src="assets/Azza_photo_web.png"/>
+</div>
+<div class="hero-text">
+<div class="hero-subtitle">Ph.D. Candidate in Computer Science</div>
+<h1>Azza <em>Fadhel</em></h1>
+<div class="hero-location">Washington State University · Pullman, WA, USA  ·  azza.fadhel@wsu.edu</div><div class="hero-opportunity"><strong>Open to:</strong> Ph.D. research internships and future full-time roles as Research Scientist, Applied Scientist, or Research Engineer.</div>
+<div class="hero-links">
+<a href="https://www.linkedin.com/in/azza-fadhel/" rel="noopener" target="_blank" title="LinkedIn">
+<svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+</a>
+<a href="https://github.com/azzafadhel" rel="noopener" target="_blank" title="GitHub">
+<svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+</a>
+<a href="https://scholar.google.com/citations?user=BFzBlOEAAAAJ&amp;hl=fr" rel="noopener" target="_blank" title="Google Scholar">
+<svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"></path></svg>
+</a>
+<a href="https://www.researchgate.net/profile/Azza-Fadhel?ev=hdr_xprf" rel="noopener" target="_blank" title="ResearchGate">
+<svg fill="none" height="15" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="15"><circle cx="12" cy="12" r="10"></circle><text fill="currentColor" font-size="8.5" font-weight="bold" stroke="none" x="4.5" y="16.5">RG</text></svg>
+</a>
+<a href="mailto:azza.fadhel@wsu.edu" title="Email">
+<svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline fill="none" points="22,6 12,13 2,6" stroke="var(--bg)" stroke-width="1.5"></polyline></svg>
+</a>
+</div>
+<a class="cv-btn" download="" href="assets/azza-fadhel-cv.pdf">
+<svg fill="currentColor" height="13" viewbox="0 0 24 24" width="13"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+      Download CV
+    </a>
+<span class="update-badge">(Last Update: September 2026)</span>
+</div>
+</header>
+<!-- ════════════ PAGE CONTENT ════════════ -->
+<div class="page">
+<div class="about-edu-row">
+<!-- ABOUT ME -->
+<section class="card" id="about">
+<h2 class="card-title">About Me</h2>
+<div class="about-text">
+<p>
+      I am a Computer Science Ph.D. candidate at
+      <a href="https://wsu.edu" rel="noopener" target="_blank">Washington State University</a>,
+      working on <strong>machine learning for optimization and decision-making with limited data</strong>.
+      I develop methods that help identify promising solutions when collecting data or running
+      experiments is expensive.
+    </p>
+<p>
+      My research combines <strong>Bayesian optimization, probabilistic machine learning,
+      offline optimization, and generative modeling</strong>.
+      I design and develop learning and optimization methods for problems in
+      <strong>materials discovery, metal 3D printing, wearable systems, and other scientific
+      and engineering domains</strong>.
+      My work has been published at the <strong>International Conference on Machine Learning (ICML), International Conference on Artificial Intelligence and Statistics (AISTATS), and AAAI Conference on Artificial Intelligence (AAAI)</strong>.
+    </p>
+<p>
+      My work combines <strong>algorithm development with hands-on implementation</strong>.
+      I work across the research process, from formulating problems and developing new methods
+      to implementing, deploying, and evaluating them with real-world data and experiments.
+    </p>
+</div>
+<div class="section-sub">Research Focus</div>
+<ul class="research-list">
+<li>Offline optimization and learning from limited data.</li>
+<li>Bayesian optimization and probabilistic machine learning.</li>
+<li>Generative methods for optimization and scientific discovery.</li>
+<li>AI-driven design and experimentation for scientific and engineering systems.</li>
+</ul>
+</section>
+<!-- EDUCATION -->
+<section class="card" id="education">
+<h2 class="card-title">Education</h2>
+<div class="edu-entry">
+<div class="edu-header">
+<div>
+<div class="edu-degree-name">Ph.D. in Computer Science</div>
+<div class="edu-institution">Washington State University</div>
+<div class="edu-location">Pullman, WA, USA</div>
+</div>
+<div class="edu-years">2022 – 2027 (Expected)</div>
+</div>
+<div class="edu-detail"><strong>Advisors:</strong> Prof. Jana Doppa &amp; Prof. Nghia Hoang</div>
+<div class="edu-detail"><strong>Dissertation:</strong> <em>Use-inspired AI for Engineering Design and Scientific Discovery</em></div>
+<span class="edu-gpa">GPA: 3.96 / 4.0</span>
+</div>
+<div class="edu-entry">
+<div class="edu-header">
+<div>
+<div class="edu-degree-name">M.Sc. in Computer Science</div>
+<div class="edu-institution">Washington State University</div>
+<div class="edu-location">Pullman, WA, USA</div>
+</div>
+<div class="edu-years">2022 – 2025</div>
+</div>
+<div class="edu-detail"><strong>Advisors:</strong> Prof. Jana Doppa &amp; Prof. Nghia Hoang</div>
+<div class="edu-detail"><strong>Thesis:</strong> <em>Nanoporous Materials Discovery via Search Bias-Guided Surrogate Modeling</em></div>
+<span class="edu-gpa">GPA: 3.97 / 4.0</span>
+</div>
+<div class="edu-entry">
+<div class="edu-header">
+<div>
+<div class="edu-degree-name">Engineering Degree in Computer Science</div>
+<div class="edu-institution">École Polytechnique de Tunisie</div>
+<div class="edu-location">Tunis, Tunisia</div>
+</div>
+<div class="edu-years">2019 – 2022</div>
+</div>
+<div class="edu-detail"><strong>Major:</strong> Signals and Systems</div>
+<div class="edu-detail"><strong>Graduated with Excellence</strong></div>
+</div>
+<div class="edu-entry">
+<div class="edu-header">
+<div>
+<div class="edu-degree-name">University First Cycle Studies</div>
+<div class="edu-institution" style="font-style:italic;font-size:.76rem;">Dual Degree: Mathematics – Physics</div>
+<div class="edu-institution">Preparatory School for Engineering Studies of Tunis (IPEIT)</div>
+<div class="edu-location">Tunis, Tunisia</div>
+</div>
+<div class="edu-years">2017 – 2019</div>
+</div>
+<div class="edu-detail"><strong>Top ~5% nationally (76th of ~1,500 candidates) in Tunisia’s competitive engineering entrance examination</strong></div>
+</div>
+</section>
+</div>
+<!-- ══ RESEARCH PROJECTS ══ -->
+<section class="card" id="projects">
+<h2 class="card-title">Research Projects</h2>
+<article class="project-item">
+<figure class="project-figure">
+  <button type="button" class="project-image-button" aria-label="Enlarge MATCH-OPT framework overview" onclick="openLightbox(this.querySelector('img').src)">
+    <img src="assets/match-opt-overview.webp" alt="MATCH-OPT framework overview" loading="lazy">
+  </button>
+  <figcaption>Figure 2 · MATCH-OPT framework · Click to enlarge</figcaption>
+</figure>
+<div class="project-content">
+<div>
+<span class="project-tag">International Conference on Machine Learning (ICML) 2024</span>
+<span class="project-tag">Offline Optimization</span>
+</div>
+<h3 class="project-title">Learning Surrogates for Offline Black-Box Optimization via Gradient Matching</h3>
+<div class="proj-section"><div class="proj-section-label">Challenge</div><p>When optimization relies only on previously collected data, learned models can become unreliable when searching beyond the designs they have already seen, leading to poor recommendations.</p></div>
+<div class="proj-section"><div class="proj-section-label">What We Built</div><p>We developed <strong>MATCH-OPT</strong>, which learns both observed outcomes and <strong>which directions in the design space lead to better solutions</strong>, providing better guidance when searching beyond the available data.</p></div>
+<div class="proj-section">
+<div class="proj-section-label">Results</div>
+<div class="project-results">
+<div class="project-result"><strong>Up to +123%</strong><span>objective value vs. the best design in the offline data</span></div>
+<div class="project-result"><strong>#1 Overall</strong><span>mean rank across 6 tasks and 10 evaluated methods</span></div>
+</div>
+<p class="project-result-note">Better than the best observed design on all 6 benchmark tasks.</p>
+</div>
+<div class="proj-role"><p><strong>My role:</strong> Led the experimental implementation and evaluation, including surrogate training, candidate generation, and large-scale benchmark experiments.</p></div>
+<div class="proof-row"><a class="proof-link" href="assets/match-opt-paper.pdf" rel="noopener" target="_blank">Read paper PDF ↗</a></div>
+</div>
+</article>
+<article class="project-item">
+<figure class="project-figure">
+  <button type="button" class="project-image-button" aria-label="Enlarge OptReg framework overview" onclick="openLightbox(this.querySelector('img').src)">
+    <img src="assets/optreg-overview.webp" alt="OptReg framework overview" loading="lazy">
+  </button>
+  <figcaption>Figure 2 · OptReg framework · Click to enlarge</figcaption>
+</figure>
+<div class="project-content">
+<div><span class="project-tag">AAAI Conference on Artificial Intelligence (AAAI) 2026</span><span class="project-tag">Materials Discovery</span></div>
+<h3 class="project-title">Nanoporous Materials Discovery via Search Bias-Guided Surrogate Modeling</h3>
+<div class="proj-section"><div class="proj-section-label">Challenge</div><p>Searching for high-performing materials is expensive because only a small fraction of candidate designs can be evaluated. Models trained on existing data can predict known materials well but still struggle to identify the best unseen candidates.</p></div>
+<div class="proj-section"><div class="proj-section-label">What We Built</div><p>We developed <strong>OptReg</strong>, a surrogate-learning method that learns not only to predict material properties, but also <strong>which directions in the design space lead toward better candidates</strong>, improving how materials are ranked for discovery.</p></div>
+<div class="proj-section">
+<div class="proj-section-label">Results</div>
+<div class="project-results">
+<div class="project-result"><strong>+126%</strong><span>methane-storage improvement over the best training material</span></div>
+<div class="project-result"><strong>+309%</strong><span>hydrogen-storage improvement over the best training material</span></div>
+</div>
+<p class="project-result-note">Discovery evaluated from 3,000 training materials with a 100-candidate selection budget.</p>
+</div>
+<div class="proj-role"><p><strong>My role:</strong> Led the ML research end-to-end, including problem formulation, method design, implementation, candidate discovery, and evaluation.</p></div>
+<div class="proof-row"><a class="proof-link" href="assets/optreg-paper.pdf" rel="noopener" target="_blank">Read paper PDF ↗</a></div>
+</div>
+</article>
+<article class="project-item">
+<figure class="project-figure">
+  <button type="button" class="project-image-button" aria-label="Enlarge OptBias framework overview" onclick="openLightbox(this.querySelector('img').src)">
+    <img src="assets/optbias-overview.webp" alt="OptBias framework overview" loading="lazy">
+  </button>
+  <figcaption>Figure 2 · OptBias workflow · Click to enlarge</figcaption>
+</figure>
+<div class="project-content">
+<div><span class="project-tag">International Conference on Artificial Intelligence and Statistics (AISTATS) 2026</span><span class="project-tag">Small-Data Optimization</span></div>
+<h3 class="project-title">Black-Box Optimization from Small Offline Datasets via Meta Learning with Synthetic Tasks</h3>
+<div class="proj-section"><div class="proj-section-label">Challenge</div><p>In many scientific and engineering problems, historical data are not only scarce but also dominated by <strong>poor-performing designs</strong>, making it difficult to identify better solutions without collecting costly new data.</p></div>
+<div class="proj-section"><div class="proj-section-label">What We Built</div><p>We developed <strong>OptBias</strong>, a meta-learning framework that learns useful search behavior from synthetic optimization tasks and transfers that knowledge to new problems with very limited, low-quality data.</p></div>
+<div class="proj-section">
+<div class="proj-section-label">Results</div>
+<div class="project-results">
+<div class="project-result"><strong>Up to +1,900%</strong><span>objective value vs. the best design in the poor-quality offline data</span></div>
+<div class="project-result"><strong>#1 Overall</strong><span>mean rank across 6 optimization tasks and 10 methods</span></div>
+</div>
+<p class="project-result-note">Used only the lowest-performing 1% of historical data; ranked 1st on 4/6 tasks and 2nd on the other two.</p>
+</div>
+<div class="proj-role"><p><strong>My role:</strong> Led the project end-to-end, including method design, synthetic task generation, meta-learning implementation, experiments, and analysis.</p></div>
+<div class="proof-row"><a class="proof-link" href="assets/optbias-paper.pdf" rel="noopener" target="_blank">Read paper PDF ↗</a></div>
+</div>
+</article>
+<article class="project-item">
+<figure class="project-figure">
+  <button type="button" class="project-image-button" aria-label="Enlarge BEAM framework overview" onclick="openLightbox(this.querySelector('img').src)">
+    <img src="assets/beam-overview.webp" alt="BEAM laboratory feedback loop" loading="lazy">
+  </button>
+  <figcaption>Figure 2 · BEAM laboratory feedback loop · Click to enlarge</figcaption>
+</figure>
+<div class="project-content">
+<div><span class="project-tag">Innovative Applications of Artificial Intelligence (IAAI), AAAI 2026</span><span class="project-tag">Deployed AI</span></div>
+<h3 class="project-title">Discovery of Feasible 3D Printing Configurations for Metal Alloys via AI-Driven Adaptive Experimental Design</h3>
+<div class="proj-section"><div class="proj-section-label">Challenge</div><p>Finding workable settings for printing GRCop-42 is a <strong>rare-event search problem</strong>: among more than 100 million possible configurations at each laser-power level, most settings fail and feasible ones are extremely rare. Each physical experiment is also costly in time and materials.</p></div>
+<div class="proj-section"><div class="proj-section-label">What We Built</div><p>We developed <strong>BEAM</strong>, an AI-guided experimental design framework that learns from previous successes and failures, estimates where feasible configurations are most likely to exist, and selects the most promising settings for the next physical printing experiments.</p></div>
+<div class="proj-section">
+<div class="proj-section-label">Results</div>
+<div class="project-results"><div class="project-result"><strong>6 Feasible</strong><span>configurations discovered by BEAM across all four tested laser-power levels, after 37 earlier manual trials over 6+ months found none</span></div><div class="project-result"><strong>≤10 Trials / Level</strong><span>AI-guided physical trials needed to identify a feasible setting at each tested power level</span></div></div>
+<p class="project-result-note">Real physical deployment on GRCop-42 additive manufacturing.</p></div>
+<div class="proj-role"><p><strong>My role:</strong> Led the AI/ML work, including problem formulation, probabilistic modeling, search strategy design, experiment planning with materials-science collaborators, and analysis of physical printing results.</p></div>
+<div class="proof-row">
+<a class="proof-link" href="assets/beam-paper.pdf" rel="noopener" target="_blank">Read paper PDF ↗</a>
+<a class="proof-link" href="https://news.wsu.edu/news/2026/08/24/researchers-use-ai-to-democratize-3d-printing-of-crucial-metal-alloy/" rel="noopener" target="_blank">WSU News Feature ↗</a>
+</div>
+</div>
+</article>
+<article class="project-item project-ongoing">
+<figure class="project-figure">
+  <div class="project-cover project-cover-optwear" role="img" aria-label="OptWear wearable systems research project">
+    <div class="project-cover-kicker">Wearable Systems</div>
+    <div class="project-cover-title">OptWear</div>
+    <div class="project-cover-sub">Multi-fidelity optimization for energy-latency design trade-offs</div>
+  </div>
+  <figcaption>Manuscript under review · overview figure not shown</figcaption>
+</figure>
+<div class="project-content">
+<div><span class="project-tag">AAAI Conference on Artificial Intelligence (AAAI) 2027 · Under Review</span><span class="project-tag">Wearable Systems</span></div>
+<h3 class="project-title">OptWear: AI-Driven Human-Centered Design of Wearable Health Systems</h3>
+<div class="proj-section"><div class="proj-section-label">Challenge</div><p>Designing wearable health systems requires balancing competing goals such as <strong>energy efficiency and latency</strong>, while evaluating every candidate on real hardware is expensive and time-consuming.</p></div>
+<div class="proj-section"><div class="proj-section-label">What We Built</div><p>We developed <strong>OptWear</strong>, a multi-fidelity optimization framework that combines inexpensive simulations with selective hardware evaluations and adapts the search to <strong>application-specific energy and latency priorities</strong>.</p></div>
+<div class="proj-section">
+<div class="proj-section-label">Results</div>
+<div class="project-results">
+<div class="project-result"><strong>85.2% Lower Cost</strong><span>average evaluation-cost reduction across 5 wearable applications</span></div>
+<div class="project-result"><strong>5 Applications</strong><span>design selection adapted to different energy–latency priorities</span></div>
+</div>
+<p class="project-result-note">Lower evaluation cost while maintaining comparable design quality.</p></div>
+<div class="proj-role"><p><strong>My role:</strong> Led the AI/ML formulation, surrogate modeling, multi-fidelity optimization, preference-aware search, experiments, and analysis in collaboration with the wearable-systems team.</p></div>
+</div>
+</article>
+<article class="project-item project-ongoing">
+<figure class="project-figure project-figure-placeholder">
+  <div class="project-icon-cover" role="img" aria-label="PFAS materials discovery project">
+    <div class="project-icon" aria-hidden="true">🧪</div>
+  </div>
+  <figcaption>Ongoing PFAS materials-discovery collaboration</figcaption>
+</figure>
+<div class="project-content">
+<div><span class="project-tag">Ongoing Research</span><span class="project-tag">Constrained Multi-Objective Optimization</span></div>
+<h3 class="project-title">Data-Efficient Discovery of PFAS-Capturing Materials via Constrained Multi-Objective Bayesian Optimization</h3>
+<div class="proj-section"><div class="proj-section-label">Challenge</div><p>PFAS material discovery requires identifying designs that simultaneously achieve <strong>high uptake and high selectivity</strong> while satisfying synthesis feasibility constraints.</p></div>
+<div class="proj-section"><div class="proj-section-label">What We Built</div><p>I developed a <strong>feasibility-aware multi-objective Bayesian optimization</strong> framework that learns from experimental results and prioritizes candidates with strong performance trade-offs that are also likely to be synthesizable.</p></div>
+<div class="proj-section"><div class="proj-section-label">Preliminary Results</div><div class="project-results"><div class="project-result"><strong>~+3,300%</strong><span>best observed uptake vs. the literature baseline</span></div><div class="project-result"><strong>~+150%</strong><span>best observed selectivity vs. the literature baseline</span></div></div><p class="project-result-note">After five optimization rounds; the best uptake and selectivity values occur at different points on the trade-off frontier.</p></div>
+<div class="proj-role"><p><strong>My role:</strong> Lead the computational optimization, including problem formulation, surrogate and feasibility modeling, candidate selection, and coordination with experimental collaborators.</p></div>
+</div>
+</article>
+</section>
+<!-- ══ PUBLICATIONS ══ -->
+<section class="card" id="publications">
+<h2 class="card-title">Publications</h2>
+<div class="section-sub">Published Papers</div>
+<div class="pub-item"><div>
+<div class="pub-title">Learning Surrogates for Offline Black-Box Optimization via Gradient Matching</div>
+<div class="pub-authors">M. Hoang, <strong>A. Fadhel</strong>, A. Deshwal, J. R. Doppa, T. N. Hoang</div>
+<div class="pub-venue">International Conference on Machine Learning (ICML), 2024 · 27% acceptance rate</div>
+</div>
+</div>
+<div class="pub-item"><div>
+<div class="pub-title">Discovery of Feasible 3D Printing Configurations for Metal Alloys via AI-Driven Adaptive Experimental Design</div>
+<div class="pub-authors"><strong>A. Fadhel</strong>, N. W. Zuckschwerdt, A. Deshwal, S. Bose, A. Bandyopadhyay, J. Doppa</div>
+<div class="pub-venue">AAAI Conference on Artificial Intelligence (AAAI), 2026 · 24% acceptance rate</div>
+</div>
+</div>
+<div class="pub-item"><div>
+<div class="pub-title">Nanoporous Materials Discovery via Search Bias-Guided Surrogate Modeling</div>
+<div class="pub-authors"><strong>A. Fadhel</strong>, Y. Chemingui, M. Hoang, A. Deshwal, T. N. Hoang, J. Doppa</div>
+<div class="pub-venue">AAAI Conference on Artificial Intelligence (AAAI), 2026 · 24% acceptance rate</div>
+</div>
+</div>
+<div class="pub-item"><div>
+<div class="pub-title">Black-Box Optimization from Small Offline Datasets via Meta Learning with Synthetic Tasks</div>
+<div class="pub-authors"><strong>A. Fadhel</strong>, T. H. Tran, T. N. Hoang, J. R. Doppa</div>
+<div class="pub-venue">International Conference on Artificial Intelligence and Statistics (AISTATS), 2026 · 25% acceptance rate</div>
+</div>
+</div>
+<div class="pub-item"><div>
+<div class="pub-title">Artificial Intelligence Driven Approach to Accelerate Discovery of Directed Energy Deposition of GRCop-42</div>
+<div class="pub-authors">N. W. Zuckschwerdt, <strong>A. Fadhel</strong>, A. Deshwal, J. R. Doppa, S. Bose, A. Bandyopadhyay</div>
+<div class="pub-venue">Journal of Virtual and Physical Prototyping, 2026</div>
+</div>
+</div>
+<div class="pub-item"><div>
+<div class="pub-title">AI-Driven Discovery of Feasible 3D Printing Configurations for Metal Alloys</div>
+<div class="pub-authors"><strong>A. Fadhel</strong>, N. W. Zuckschwerdt, A. Deshwal, S. Bose, A. Bandyopadhyay, J. R. Doppa</div>
+<div class="pub-venue">AI Magazine, 47(3), e70069, 2026 · Invited Special Topic Article</div>
+</div>
+</div>
+<div class="section-sub">Papers Under Review</div>
+<div class="pub-item"><div>
+<div class="pub-title">Boosting Offline Reinforcement Learning in Data-Scarce Settings via Guided Diffusion Distillation</div>
+<div class="pub-authors">T. H. Tran, <strong>A. Fadhel</strong>, Q. H. Pham, M. C. Dao, P. L. Nguyen, J. Doppa, T. N. Hoang</div>
+<div class="pub-venue">Under review at AAAI Conference on Artificial Intelligence (AAAI), 2027</div>
+</div>
+</div>
+<div class="pub-item"><div>
+<div class="pub-title">OptWear: AI-Driven Human-Centered Design of Wearable Health Systems</div>
+<div class="pub-authors"><strong>A. Fadhel*</strong>, F. Alizadehziri*, G. Bhat, J. R. Doppa · *Equal contribution</div>
+<div class="pub-venue">Under review at AAAI Conference on Artificial Intelligence (AAAI), 2027</div>
+</div>
+</div>
+<div class="pub-item"><div>
+<div class="pub-title">Wear-DSE: Cost-Aware Multi-Fidelity Design Space Exploration for Wearable Health Systems</div>
+<div class="pub-authors"><strong>A. Fadhel*</strong>, F. Alizadehziri*, G. Bhat, J. R. Doppa · *Equal contribution</div>
+<div class="pub-venue">Under review at ACM Transactions on Embedded Computing Systems (TECS), 2026</div>
+</div>
+</div>
+<div class="section-sub">Manuscript in Preparation</div>
+<div class="pub-item"><div>
+<div class="pub-title">Data-Efficient Discovery of PFAS-Capturing Materials via Constrained Multi-Objective Bayesian Optimization</div>
+<div class="pub-authors"><strong>A. Fadhel</strong>, Q. Ke, Q. Zhou, C. Simon, E. D. Bloch, E. Scurek, J. R. Doppa</div>
+<div class="pub-venue">Manuscript in preparation, 2026</div>
+</div>
+</div>
+</section>
+<!-- ══ SKILLS ══ -->
+<section class="card" id="skills">
+<h2 class="card-title">Technical Skills</h2>
+<div class="skills-2col">
+<div>
+<div class="skill-group-title">Programming &amp; ML Tools</div>
+<div class="skills-grid">
+<span class="skill-pill">Python</span><span class="skill-pill">C/C++</span><span class="skill-pill">SQL</span><span class="skill-pill">Bash</span>
+<span class="skill-pill">PyTorch</span><span class="skill-pill">GPyTorch</span><span class="skill-pill">BoTorch</span><span class="skill-pill">scikit-learn</span><span class="skill-pill">AutoGluon</span><span class="skill-pill">XGBoost</span>
+</div>
+<div class="skill-group-title">Probabilistic &amp; Generative Modeling</div>
+<div class="skills-grid">
+<span class="skill-pill">Gaussian Processes</span><span class="skill-pill">Surrogate Modeling</span><span class="skill-pill">Probabilistic Modeling</span>
+<span class="skill-pill">Flow Matching</span><span class="skill-pill">Score Matching</span><span class="skill-pill">Neural ODEs / ODEs</span><span class="skill-pill">Diffusion Models</span><span class="skill-pill">Meta-Learning</span>
+<span class="skill-pill">Transformers</span><span class="skill-pill">Gaussian Process Classification</span><span class="skill-pill">Continuous Normalizing Flows</span><span class="skill-pill">Graph Kernels</span></div>
+<div class="skill-group-title">Optimization &amp; Experimental Design</div>
+<div class="skills-grid">
+<span class="skill-pill">Bayesian Optimization</span><span class="skill-pill">Offline Optimization</span><span class="skill-pill">Generative Optimization</span>
+<span class="skill-pill">Constrained Bayesian Optimization</span><span class="skill-pill">Multi-Objective Optimization</span><span class="skill-pill">Multi-Fidelity Optimization</span>
+<span class="skill-pill">Adaptive Experimental Design</span><span class="skill-pill">Acquisition Functions</span>
+<span class="skill-pill">Pareto Optimization</span><span class="skill-pill">Feasibility-Aware Optimization</span><span class="skill-pill">NSGA-II</span></div>
+</div>
+<div>
+<div class="skill-group-title">Data Science &amp; Evaluation</div>
+<div class="skills-grid">
+<span class="skill-pill">NumPy</span><span class="skill-pill">pandas</span><span class="skill-pill">SciPy</span><span class="skill-pill">Matplotlib</span>
+<span class="skill-pill">Statistical Modeling</span><span class="skill-pill">Experiment Design</span><span class="skill-pill">Data Visualization</span>
+<span class="skill-pill">Benchmarking &amp; Ablations</span><span class="skill-pill">Uncertainty Quantification</span>
+<span class="skill-pill">Imbalanced Classification</span></div>
+<div class="skill-group-title">Systems &amp; Research Tools</div>
+<div class="skills-grid">
+<span class="skill-pill">Linux</span><span class="skill-pill">Git/GitHub</span><span class="skill-pill">Conda</span><span class="skill-pill">Slurm</span><span class="skill-pill">VS Code</span><span class="skill-pill">Jupyter</span><span class="skill-pill">LaTeX / Overleaf</span>
+</div>
+<div class="skill-group-title">Languages</div>
+<div class="skills-grid"><span class="skill-pill">Arabic (native)</span><span class="skill-pill">French (bilingual)</span><span class="skill-pill">English (professional)</span></div>
+</div>
+</div>
+</section>
+<!-- ══ LATEST NEWS ══ -->
+<section class="card" id="news">
+<h2 class="card-title">Latest News</h2>
+<div class="news-item"><div class="news-date">August 2026</div><div class="news-text">Published an invited special topic article in <em>AI Magazine</em>: <strong>AI-Driven Discovery of Feasible 3D Printing Configurations for Metal Alloys</strong>.</div></div>
+<div class="news-item"><div class="news-date">May 2026</div><div class="news-text">Published <strong>Black-Box Optimization from Small Offline Datasets via Meta Learning with Synthetic Tasks</strong> at the <strong>International Conference on Artificial Intelligence and Statistics (AISTATS)</strong>.</div></div>
+<div class="news-item"><div class="news-date">Apr 2026</div><div class="news-text">Received the <strong>Founders’ Award for Outstanding Master’s Thesis Student</strong> from the Association for Faculty Women.</div></div>
+<div class="news-item">
+<div class="news-date">Jan 2026</div>
+<div class="news-text">
+<ul>
+<li>Received the <strong>Innovative Deployed AI Application Award</strong> from the Association for the Advancement of Artificial Intelligence (AAAI) / Innovative Applications of Artificial Intelligence (IAAI), and the <strong>AAAI Scholarship and Volunteer Award</strong>.</li>
+<li>Published <strong>Nanoporous Materials Discovery</strong> at the AAAI Conference on Artificial Intelligence (AAAI) and <strong>Discovery of Feasible 3D Printing Configurations</strong> in Innovative Applications of Artificial Intelligence (IAAI), AAAI 2026.</li>
+<li>Co-organized the <strong>5th AAAI Workshop on AI to Accelerate Science and Engineering</strong> and co-instructed an AAAI tutorial on offline black-box optimization.</li>
+</ul>
+</div>
+</div>
+<div class="news-item"><div class="news-date">2025</div><div class="news-text">Received Outstanding Graduate Teaching Assistant awards from WSU’s Voiland College and EECS Department.</div></div>
+<div class="news-item"><div class="news-date">2024</div><div class="news-text">Received an International Conference on Machine Learning (ICML) Scholarship Award and volunteered at Women in Machine Learning (WiML) 2024.</div></div>
+</section>
+<!-- ══ AWARDS ══ -->
+<section class="card" id="awards">
+<h2 class="card-title">Awards &amp; Honors</h2>
+<div class="award-item"><div class="award-row"><div class="award-icon">🏆</div><div><div class="award-name">Founders' Award for Outstanding Master's Thesis Student</div><div class="award-org">Association for Faculty Women</div></div><div class="award-year">2026</div></div></div>
+<div class="award-item"><div class="award-row"><div class="award-icon">🏆</div><div><div class="award-name">Innovative Deployed AI Application Award</div><div class="award-org">Association for the Advancement of Artificial Intelligence (AAAI) / Innovative Applications of Artificial Intelligence (IAAI)</div></div><div class="award-year">2026</div></div></div>
+<div class="award-item"><div class="award-row"><div class="award-icon">🏆</div><div><div class="award-name">AAAI Scholarship and Volunteer Award</div><div class="award-org">Association for the Advancement of Artificial Intelligence</div></div><div class="award-year">2026</div></div></div>
+<div class="award-item"><div class="award-row"><div class="award-icon">🏆</div><div><div class="award-name">WSU Graduate &amp; Professional Student Travel Grant — AAAI Conference on Artificial Intelligence (AAAI)</div><div class="award-org">Graduate &amp; Professional Student Association, Washington State University</div></div><div class="award-year">2026</div></div></div>
+<div class="award-item"><div class="award-row"><div class="award-icon">🏆</div><div><div class="award-name">Outstanding Graduate Teaching Assistant Award</div><div class="award-org">Voiland College of Engineering, Washington State University</div><div class="proof-row"><a class="proof-link" href="https://news.wsu.edu/news/2025/05/01/voiland-college-names-2025-outstanding-students/" rel="noopener" target="_blank">WSU News ↗</a><a class="proof-link" href="https://www.instagram.com/wsuvoiland/reel/DKM6Md3x7QT/" rel="noopener" target="_blank">Voiland College Feature ↗</a></div></div><div class="award-year">2025</div></div></div>
+<div class="award-item"><div class="award-row"><div class="award-icon">🏆</div><div><div class="award-name">Outstanding Graduate Teaching Assistant Award</div><div class="award-org">EECS Department, Washington State University</div></div><div class="award-year">2025</div></div></div>
+<div class="award-item"><div class="award-row"><div class="award-icon">🏆</div><div><div class="award-name">International Conference on Machine Learning (ICML) Scholarship Award</div><div class="award-org">International Conference on Machine Learning (ICML), Vienna, Austria</div></div><div class="award-year">2024</div></div></div>
+<div class="award-item"><div class="award-row"><div class="award-icon">🏆</div><div><div class="award-name">WSU Graduate &amp; Professional Student Travel Grant — International Conference on Machine Learning (ICML)</div><div class="award-org">Graduate &amp; Professional Student Association, Washington State University</div></div><div class="award-year">2024</div></div></div>
+<div class="award-item"><div class="award-row"><div class="award-icon">🏆</div><div><div class="award-name">Nakhara Scholarship</div><div class="award-org">Voiland College of Engineering and Architecture, Washington State University</div></div><div class="award-year">2022–23</div></div></div>
+<div class="award-item"><div class="award-row"><div class="award-icon">🏆</div><div><div class="award-name">Tunisian Government Scholarship for Engineering Study</div><div class="award-org">Awarded for ranking in the Top 5% nationally in the Qualification Exam for Engineering Schools Entrance</div></div><div class="award-year">2019–22</div></div></div>
+</section>
+<!-- ══ EXPERIENCE (tabbed) ══ -->
+<section class="card" id="experience">
+<h2 class="card-title">Experience</h2>
+<div class="exp-tab-btns">
+<button class="exp-tab-btn active" id="btn-research-exp" onclick="showExp('research-exp',this)">🔬 Research Experience</button>
+<button class="exp-tab-btn" id="btn-teaching-exp" onclick="showExp('teaching-exp',this)">🎓 Teaching Experience</button>
+</div>
+<div class="exp-panel active" id="research-exp">
+<div class="exp-item">
+<div style="display:flex;align-items:baseline;gap:.45rem;margin-bottom:.15rem;"><div class="exp-dot"></div><div><span class="exp-title">Graduate Research Assistant</span><span class="exp-date">(Sep 2022 – Present)</span></div></div>
+<div class="exp-org">EECS Department, Washington State University · Pullman, WA</div>
+<ul class="exp-bullets">
+<li>Developed machine learning-based surrogate models from experimental data for offline black-box optimization using gradient-matching.</li>
+<li>Created search bias-guided surrogate modeling frameworks combining value-matching and optimization-regularized objectives to accelerate discovery of high-performing materials.</li>
+<li>Designed meta-learning frameworks using Gaussian process-based synthetic task generation to learn transferable optimization bias and fine-tune surrogates under data scarcity.</li>
+<li>Built probabilistic surrogates for adaptive parameter search in metal additive manufacturing, enabling rapid, defect-free printing of NASA’s GRCop-42 alloy.</li>
+<li>Developed multi-objective, multi-fidelity Bayesian optimization frameworks to jointly optimize energy efficiency and sensing accuracy in healthcare wearables.</li>
+<li>Designed constrained multi-objective Bayesian optimization for PFAS material discovery, optimizing uptake and selectivity under synthesis feasibility constraints.</li>
+<li>Developing generative optimization methods for offline rare-positive scientific discovery using probabilistic success guidance and data-density modeling.</li>
+</ul>
+</div>
+<div class="exp-item">
+<div style="display:flex;align-items:baseline;gap:.45rem;margin-bottom:.15rem;"><div class="exp-dot"></div><div><span class="exp-title">Research Intern</span><span class="exp-date">(Mar – May 2022)</span></div></div>
+<div class="exp-org">University of Louisville, USA</div>
+<div class="exp-desc">Explored applications of quantum computing in machine learning and conducted comparative analysis of quantum and classical approaches.</div>
+</div>
+<div class="exp-item">
+<div style="display:flex;align-items:baseline;gap:.45rem;margin-bottom:.15rem;"><div class="exp-dot" style="background:var(--accent3);"></div><div><span class="exp-title">Quantum Research Intern</span><span class="exp-date">(Jun – Aug 2021)</span></div></div>
+<div class="exp-org">QWorld (Remote)</div>
+<div class="exp-desc">Implemented hybrid quantum-classical models for image classification using Quanvolutional Neural Networks, Ensemble Classification, and Quantum Transfer Learning.</div>
+</div>
+</div>
+<div class="exp-panel" id="teaching-exp">
+<div class="exp-item">
+<div style="display:flex;align-items:baseline;gap:.45rem;margin-bottom:.15rem;"><div class="exp-dot teach"></div><div><span class="exp-title">Graduate Teaching Assistant</span><span class="exp-date">(Jan 2023 – Present)</span></div></div>
+<div class="exp-org">EECS Department, Washington State University · Pullman, WA</div>
+<div class="exp-desc">Developed and delivered tutorials and hands-on labs on neural networks, SGD, fine-tuning, and CNNs/ResNets; provided detailed feedback, weekly office hours, and targeted help sessions.</div>
+<ul class="course-list">
+<li class="course-item"><span class="course-icon">🏫</span><span><span class="course-code">CptS 434/534</span> — Neural Network Design and Applications <span class="course-seasons">Spring 2023, Spring 2025</span></span></li>
+<li class="course-item"><span class="course-icon">🏫</span><span><span class="course-code">CptS 451</span> — Introduction to Database Systems <span class="course-seasons">Spring 2025</span></span></li>
+<li class="course-item"><span class="course-icon">🏫</span><span><span class="course-code">CptS 350</span> — Design and Analysis of Algorithms <span class="course-seasons">Fall 2024</span></span></li>
+<li class="course-item"><span class="course-icon">🏫</span><span><span class="course-code">CptS 440/540</span> — Artificial Intelligence <span class="course-seasons">Spring 2024</span></span></li>
+<li class="course-item"><span class="course-icon">🏫</span><span><span class="course-code">CptS 570</span> — Machine Learning <span class="course-seasons">Fall 2023</span></span></li>
+</ul>
+</div>
+<div class="exp-item">
+<div style="display:flex;align-items:baseline;gap:.45rem;margin-bottom:.15rem;"><div class="exp-dot teach"></div><div><span class="exp-title">Section Leader, Code in Place</span><span class="exp-date">(Apr – May 2025)</span></div></div>
+<div class="exp-org">Stanford University (Online)</div>
+<div class="exp-desc">Taught Python programming to a global cohort through live weekly sessions, emphasizing interactive learning and coding fundamentals.</div>
+<div class="proof-row"><a class="proof-link" href="https://digitalcredential.stanford.edu/check/7CEE4330A7FE1F53629BCE7A4B1A50F486345C37480F2FB68FA2EFDF2AC285A6UzVhdk4vTzV4cnJQUlphazYwbndvSlJWYmRoOWFicjVuVWlPMXh4UkpXSXQ3NlBJ" rel="noopener" target="_blank">View credential ↗</a></div>
+</div>
+<div class="exp-item">
+<div style="display:flex;align-items:baseline;gap:.45rem;margin-bottom:.15rem;"><div class="exp-dot teach"></div><div><span class="exp-title">Teaching Assistant (Volunteer)</span><span class="exp-date">(Apr 2025)</span></div></div>
+<div class="exp-org">NVIDIA Deep Learning Institute</div>
+<div class="exp-desc">Supported certified course labs on neural networks and PyTorch at Washington State University.</div>
+</div>
+</div>
+</section>
+<!-- ══ SERVICE ══ -->
+<section class="card" id="service">
+<h2 class="card-title">Professional Service &amp; Leadership</h2>
+<div class="service-section">
+<div class="service-subtitle">Workshop &amp; Tutorial Organization</div>
+<ul class="service-list">
+<li>Co-Organizer, 5th AAAI Workshop on AI to Accelerate Science and Engineering (AI4Science), with Aryan Deshwal, Jana Doppa, Vipin Kumar, and Carla Gomes.<span>AAAI 2026</span></li>
+<li>Co-instructor, <em>Black-box Optimization from Offline Datasets: Foundations to Recent Advances</em>, with Jana Doppa and Aryan Deshwal.<span>AAAI 2026</span></li>
+</ul>
+</div>
+<div class="service-section">
+<div class="service-subtitle">Conference Program Committee</div>
+<ul class="service-list">
+<li>AAAI (2024, 2026, 2027); ICML (2025, 2026); AISI (2026); ICLR (2026); AISTATS (2026); NeurIPS (2026).</li>
+</ul>
+</div>
+<div class="service-section">
+<div class="service-subtitle">Workshop &amp; Journal Reviewing</div>
+<ul class="service-list">
+<li>AI to Accelerate Science and Engineering (AI4Science) Workshop.<span>AAAI 2026</span></li>
+<li>Decision-Making from Offline Datasets to Online Adaptation (DEMO) Workshop.<span>ICML 2026</span></li>
+<li>Women in Machine Learning (WiML) Workshop.<span>NeurIPS 2026</span></li>
+<li>Journal Reviewer, IEEE Transactions on Sustainable Computing.<span>2025</span></li>
+</ul>
+</div>
+<div class="service-section">
+<div class="service-subtitle">Invited Talks</div>
+<ul class="service-list">
+<li><em>Discovery of Feasible 3D Printing Configurations for Metal Alloys via AI-Driven Adaptive Experimental Design</em>.<span>AAAI 2026</span></li>
+<li><em>Black-box Optimization from Offline Datasets: Foundations to Recent Advances</em>.<span>AAAI 2026</span></li>
+</ul>
+</div>
+<div class="service-section">
+<div class="service-subtitle">Leadership &amp; Mentoring</div>
+<ul class="service-list">
+<li>Graduate Representative, GradSWE, Washington State University — organize the Women in Engineering Speaker Series to inspire and support women in STEM.<span>Fall 2025–Present</span></li>
+<li>Mentor, AI4ALL Remote Program — guided four undergraduate teams through hands-on AI projects.<span>May–Dec 2025</span></li>
+<li>QWorld — assisted participants with programming tasks and technical questions.<span>Summer 2021</span></li>
+</ul>
+</div>
+<div class="service-section">
+<div class="service-subtitle">Volunteer Service</div>
+<ul class="service-list">
+<li>Conference Volunteer: ICML (2024), WiML (2024), AAAI (2026).</li>
+<li>Judge, EECS Capstone Poster Competition, Washington State University.<span>Fall 2025</span></li>
+<li>Judge, CrimsonCode Hackathon, Washington State University.<span>Spring 2026</span></li>
+</ul>
+</div>
+</section>
+<!-- ══ PROFESSIONAL DEVELOPMENT ══ -->
+<section class="card" id="certifications">
+<h2 class="card-title">Professional Development</h2>
+<div class="cert-item">
+<div class="cert-row">
+<div class="cert-icon">✦</div>
+<div><div class="cert-name">Responsible Conduct of Research for Engineers</div><div class="cert-issuer">CITI Program</div><div class="cert-links"><a class="proof-link" href="https://www.citiprogram.org/verify/?wb601614a-289b-473c-876f-dc6da72d1893-77388901" rel="noopener" target="_blank">Verify credential ↗</a></div></div>
+<div class="cert-year">Aug 2026 – Aug 2030</div>
+</div>
+</div>
+<div class="cert-item">
+<div class="cert-row">
+<div class="cert-icon">✦</div>
+<div><div class="cert-name">Advanced Technical Interview Prep</div><div class="cert-issuer">CodePath · Data structures, algorithms &amp; coding interview practice</div></div>
+<div class="cert-year">Spring 2026</div>
+</div>
+</div>
+<div class="cert-item">
+<div class="cert-row">
+<div class="cert-icon">✦</div>
+<div><div class="cert-name">CRA-WP Mentoring Mentors Workshop Series</div><div class="cert-issuer">Computing Research Association · Multi-session series on evidence-based mentoring, inclusive mentorship, aligning expectations, and supporting mentee growth</div></div>
+<div class="cert-year">Jun–Jul 2025</div>
+</div>
+</div>
+<div class="cert-item">
+<div class="cert-row">
+<div class="cert-icon">✦</div>
+<div><div class="cert-name">IEEE Women in Engineering International Leadership Summit (WIE ILS)</div><div class="cert-issuer">IEEE · Workshops and panels on leadership and career development; Tri-Cities, WA</div></div>
+<div class="cert-year">2025</div>
+</div>
+</div>
+<div class="cert-item">
+<div class="cert-row">
+<div class="cert-icon">✦</div>
+<div><div class="cert-name">Promoting Female Talent Program</div><div class="cert-issuer">Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) · Professional development focused on soft skills, networking, and real-world business environments; Tunis, Tunisia</div></div>
+<div class="cert-year">—</div>
+</div>
+</div>
+</section>
+<!-- ══ CONTACT ══ -->
+<div class="contact-card" id="contact">
+<div>
+<div class="contact-label">Contact</div>
+<div class="contact-headline">Let's connect.</div>
+<div class="contact-sub">I'm interested in probabilistic machine learning, Bayesian and offline optimization, generative optimization, adaptive experimental design, and AI for scientific discovery. Always happy to connect about research, collaborations, or opportunities.</div>
+</div>
+<div class="contact-btns">
+<a class="contact-btn contact-btn-primary" href="mailto:azza.fadhel@wsu.edu">
+<svg fill="currentColor" height="14" viewbox="0 0 24 24" width="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline fill="none" points="22,6 12,13 2,6" stroke="var(--bg)" stroke-width="1.5"></polyline></svg>
+        Email Me
+      </a>
+<a class="contact-btn contact-btn-secondary" href="https://www.linkedin.com/in/azza-fadhel/" rel="noopener" target="_blank">
+<svg fill="currentColor" height="14" viewbox="0 0 24 24" width="14"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+        LinkedIn
+      </a>
+</div>
+</div>
+</div>
+<footer>
+<p>Azza Fadhel · Ph.D. Candidate, Washington State University · <a href="mailto:azza.fadhel@wsu.edu" style="color:var(--accent);">azza.fadhel@wsu.edu</a> · Pullman, WA 99163</p>
+</footer>
+<script>
+const nav=document.querySelector('nav');
+function updateNavHeight(){
+  document.documentElement.style.setProperty('--nav-height',`${nav.offsetHeight}px`);
+}
+updateNavHeight();
+window.addEventListener('resize',updateNavHeight);
+
+function showExp(panelId,btn){
+  document.querySelectorAll('.exp-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.exp-tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(panelId).classList.add('active');
+  btn.classList.add('active');
+}
+document.querySelectorAll('a[href="#research-exp"],a[href="#teaching-exp"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    const id=this.getAttribute('href').slice(1);
+    const btn=document.getElementById('btn-'+id);
+    if(btn)showExp(id,btn);
+    setTimeout(()=>document.getElementById('experience').scrollIntoView({behavior:'smooth'}),50);
+  });
+});
+function openLightbox(src){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox').classList.add('open');}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      document.querySelectorAll('nav a').forEach(l=>l.classList.remove('active'));
+      const a=document.querySelector(`nav a[href="#${e.target.id}"]`);
+      if(a)a.classList.add('active');
+    }
+  });
+},{rootMargin:'-35% 0px -55% 0px'});
+document.querySelectorAll('section[id],div[id="contact"]').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
