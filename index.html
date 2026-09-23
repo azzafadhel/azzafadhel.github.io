@@ -905,18 +905,37 @@ nav a{font-size:.86rem;letter-spacing:.055em;}
 <span class="project-tag">Offline Optimization</span>
 </div>
 <h3 class="project-title">Learning Surrogates for Offline Black-Box Optimization via Gradient Matching</h3>
-<div class="proj-section"><div class="proj-section-label">Challenge</div><p>When optimization relies only on previously collected data, learned models can become unreliable when searching beyond the designs they have already seen, leading to poor recommendations.</p></div>
-<div class="proj-section"><div class="proj-section-label">What We Built</div><p>We developed <strong>MATCH-OPT</strong>, which learns both observed outcomes and <strong>which directions in the design space lead to better solutions</strong>, providing better guidance when searching beyond the available data.</p></div>
+<div class="proj-section"><div class="proj-section-label"><div class="challenge">
+  <div class="section-sub">Challenge</div>
+  <p>
+    Discovering new high-performing solutions from a limited offline dataset is challenging
+    because optimization must search beyond the observed designs, where data are scarce
+    and model predictions are less reliable.
+  </p>
+</div>
 <div class="proj-section">
+  <div class="proj-section-label">What We Built</div>
+  <p>
+    We developed <strong>MATCH-OPT</strong>, a method that learns from existing outcomes
+    while identifying how changes in design choices are associated with better performance.
+    This helps guide the search toward high-performing solutions beyond the available data.
+  </p>
+</div>
+  <div class="proj-section">
 <div class="proj-section-label">Results</div>
 <div class="project-results">
-<div class="project-result"><strong>Up to +123%</strong><span>objective value vs. the best design in the offline data</span></div>
+<div class="project-result">
+  <strong>Up to +123%</strong>
+  <span>improvement over the best design in the offline dataset</span>
+</div>
 <div class="project-result"><strong>#1 Overall</strong><span>mean rank across 6 tasks and 10 evaluated methods</span></div>
 </div>
 <p class="project-result-note">Better than the best observed design on all 6 benchmark tasks.</p>
 </div>
-<div class="proj-role"><p><strong>My role:</strong> Led the experimental implementation and evaluation, including surrogate training, candidate generation, and large-scale benchmark experiments.</p></div>
-<div class="proof-row"><a class="proof-link" href="assets/match-opt-paper.pdf" rel="noopener" target="_blank">Read paper PDF ↗</a></div>
+<div class="proj-role">
+  <p><strong>My role:</strong> Led the experimental implementation and evaluation, including surrogate model training, implementation of competing baselines, and comparative evaluation across benchmark datasets.</p>
+</div>
+  <div class="proof-row"><a class="proof-link" href="assets/match-opt-paper.pdf" rel="noopener" target="_blank">Read paper PDF ↗</a></div>
 </div>
 </article>
 <article class="project-item">
@@ -930,12 +949,20 @@ nav a{font-size:.86rem;letter-spacing:.055em;}
 <div><span class="project-tag">AAAI Conference on Artificial Intelligence (AAAI) 2026</span><span class="project-tag">Materials Discovery</span></div>
 <h3 class="project-title">Nanoporous Materials Discovery via Search Bias-Guided Surrogate Modeling</h3>
 <div class="proj-section"><div class="proj-section-label">Challenge</div><p>Searching for high-performing materials is expensive because only a small fraction of candidate designs can be evaluated. Models trained on existing data can predict known materials well but still struggle to identify the best unseen candidates.</p></div>
-<div class="proj-section"><div class="proj-section-label">What We Built</div><p>We developed <strong>OptReg</strong>, a surrogate-learning method that learns not only to predict material properties, but also <strong>which directions in the design space lead toward better candidates</strong>, improving how materials are ranked for discovery.</p></div>
 <div class="proj-section">
+  <div class="proj-section-label">What We Built</div>
+  <p>
+    We developed <strong>OptReg</strong>, a surrogate-learning method that predicts material
+    performance while also learning how changes in design variables affect that performance.
+    This helps rank unexplored materials more effectively and prioritize the most promising
+    designs for discovery.
+  </p>
+</div>
+  <div class="proj-section">
 <div class="proj-section-label">Results</div>
 <div class="project-results">
-<div class="project-result"><strong>+126%</strong><span>methane-storage improvement over the best training material</span></div>
-<div class="project-result"><strong>+309%</strong><span>hydrogen-storage improvement over the best training material</span></div>
+<div class="project-result"><strong>+126%</strong><span>methane-storage improvement over the best known material</span></div>
+<div class="project-result"><strong>+309%</strong><span>hydrogen-storage improvement over the best known material</span></div>
 </div>
 <p class="project-result-note">Discovery evaluated from 3,000 training materials with a 100-candidate selection budget.</p>
 </div>
@@ -954,8 +981,14 @@ nav a{font-size:.86rem;letter-spacing:.055em;}
 <div><span class="project-tag">International Conference on Artificial Intelligence and Statistics (AISTATS) 2026</span><span class="project-tag">Small-Data Optimization</span></div>
 <h3 class="project-title">Black-Box Optimization from Small Offline Datasets via Meta Learning with Synthetic Tasks</h3>
 <div class="proj-section"><div class="proj-section-label">Challenge</div><p>In many scientific and engineering problems, historical data are not only scarce but also dominated by <strong>poor-performing designs</strong>, making it difficult to identify better solutions without collecting costly new data.</p></div>
-<div class="proj-section"><div class="proj-section-label">What We Built</div><p>We developed <strong>OptBias</strong>, a meta-learning framework that learns useful search behavior from synthetic optimization tasks and transfers that knowledge to new problems with very limited, low-quality data.</p></div>
 <div class="proj-section">
+  <div class="proj-section-label">What We Built</div>
+  <p>
+    We developed <strong>OptBias</strong>, a meta-learning framework that learns useful search behavior
+    from synthetic optimization tasks and transfers that knowledge to real-world optimization settings
+    where only limited and low-quality data are available.
+  </p>
+</div><div class="proj-section">
 <div class="proj-section-label">Results</div>
 <div class="project-results">
 <div class="project-result"><strong>Up to +1,900%</strong><span>objective value vs. the best design in the poor-quality offline data</span></div>
@@ -983,8 +1016,9 @@ nav a{font-size:.86rem;letter-spacing:.055em;}
 <div class="proj-section-label">Results</div>
 <div class="project-results"><div class="project-result"><strong>6 Feasible</strong><span>configurations discovered by BEAM across all four tested laser-power levels, after 37 earlier manual trials over 6+ months found none</span></div><div class="project-result"><strong>≤10 Trials / Level</strong><span>AI-guided physical trials needed to identify a feasible setting at each tested power level</span></div></div>
 <p class="project-result-note">Real physical deployment on GRCop-42 additive manufacturing.</p></div>
-<div class="proj-role"><p><strong>My role:</strong> Led the AI/ML work, including problem formulation, probabilistic modeling, search strategy design, experiment planning with materials-science collaborators, and analysis of physical printing results.</p></div>
-<div class="proof-row">
+<div class="proj-role">
+  <p><strong>My role:</strong> Led the AI/ML work, including problem formulation, probabilistic modeling, optimization strategy design, computational evaluation, and experiment planning with materials-science collaborators.</p>
+</div><div class="proof-row">
 <a class="proof-link" href="assets/beam-paper.pdf" rel="noopener" target="_blank">Read paper PDF ↗</a>
 <a class="proof-link" href="https://news.wsu.edu/news/2026/08/24/researchers-use-ai-to-democratize-3d-printing-of-crucial-metal-alloy/" rel="noopener" target="_blank">WSU News Feature ↗</a>
 </div>
@@ -1000,8 +1034,13 @@ nav a{font-size:.86rem;letter-spacing:.055em;}
 <div class="project-content">
 <div><span class="project-tag">AAAI Conference on Artificial Intelligence (AAAI) 2027 · Under Review</span><span class="project-tag">Wearable Systems</span></div>
 <h3 class="project-title">OptWear: AI-Driven Human-Centered Design of Wearable Health Systems</h3>
-<div class="proj-section"><div class="proj-section-label">Challenge</div><p>Designing wearable health systems requires balancing competing goals such as <strong>energy efficiency and latency</strong>, while evaluating every candidate on real hardware is expensive and time-consuming.</p></div>
-<div class="proj-section"><div class="proj-section-label">What We Built</div><p>We developed <strong>OptWear</strong>, a multi-fidelity optimization framework that combines inexpensive simulations with selective hardware evaluations and adapts the search to <strong>application-specific energy and latency priorities</strong>.</p></div>
+<div class="proj-section">
+  <div class="proj-section-label">Challenge</div>
+  <p>
+    Wearable health-system design involves a <strong>large, discrete design space</strong> with competing objectives
+    such as <strong>energy efficiency and latency</strong>. The best design can also depend on user preferences, while real-hardware evaluation is costly and time-consuming.
+  </p>
+</div><div class="proj-section"><div class="proj-section-label">What We Built</div><p>We developed <strong>OptWear</strong>, a multi-fidelity optimization framework that combines inexpensive simulations with selective hardware evaluations and adapts the search to <strong>application-specific energy and latency priorities</strong>.</p></div>
 <div class="proj-section">
 <div class="proj-section-label">Results</div>
 <div class="project-results">
