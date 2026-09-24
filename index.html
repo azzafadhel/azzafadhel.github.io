@@ -1041,7 +1041,7 @@ nav a{font-size:.86rem;letter-spacing:.055em;}
     Wearable health-system design involves a <strong>large, discrete design space</strong> with competing objectives
     such as <strong>energy efficiency and latency</strong>. The best design can also depend on user preferences, while real-hardware evaluation is costly and time-consuming.
   </p>
-</div><div class="proj-section"><div class="proj-section-label">What We Built</div><p>We developed <strong>OptWear</strong>, a multi-fidelity optimization framework that combines inexpensive simulations with selective hardware evaluations and adapts the search to <strong>application-specific energy and latency priorities</strong>.</p></div>
+</div><div class="proj-section"><div class="proj-section-label">What We Built</div><p>We developed <strong>OptWear</strong>, a multi-fidelity multi-objective optimization framework that combines inexpensive simulations with selective hardware evaluations and adapts the search to <strong>application-specific energy and latency priorities</strong>.</p></div>
 <div class="proj-section">
 <div class="proj-section-label">Results</div>
 <div class="project-results">
@@ -1222,7 +1222,8 @@ nav a{font-size:.86rem;letter-spacing:.055em;}
 <ul class="exp-bullets">
 <li>Developed machine learning-based surrogate models from experimental data for offline black-box optimization using gradient-matching.</li>
 <li>Created search bias-guided surrogate modeling frameworks combining value-matching and optimization-regularized objectives to accelerate discovery of high-performing materials.</li>
-<li>Developed meta-learning frameworks using Gaussian process-based synthetic task generation to learn transferable optimization bias and fine-tune surrogates under data scarcity.</li>
+<li>Developed **OptBias**, a meta-learning framework that uses Gaussian process-generated synthetic optimization tasks to learn transferable search biases and adapt surrogate models to real-world optimization problems with scarce, low-quality data.
+</li>
 <li>Built probabilistic surrogates for adaptive parameter search in metal additive manufacturing, enabling rapid, defect-free printing of NASA’s GRCop-42 alloy.</li>
 <li>Designed multi-objective, multi-fidelity Bayesian optimization frameworks for high-dimensional discrete design spaces to jointly optimize energy efficiency and sensing accuracy in healthcare wearables.</li>
 <li>Designed constrained multi-objective Bayesian optimization for PFAS material discovery, optimizing uptake and selectivity under synthesis feasibility constraints.</li>
